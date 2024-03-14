@@ -1,0 +1,3396 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmShip..Create(BaseForm)
+Gui.frmShip..Size(15360,10710)
+Gui.frmShip..MinX(15360)
+Gui.frmShip..MinY(10695)
+Gui.frmShip..Position(0,0)
+Gui.frmShip..BackColor(-2147483633)
+Gui.frmShip..MousePointer(0)
+Gui.frmShip..Event(Resize,frmShip_Resize)
+Gui.frmShip..Event(UnLoad,frmShip_UnLoad)
+Gui.frmShip..Caption("Shipping Dashboard Despatch")
+Gui.frmShip..AlwaysOnTop(False)
+Gui.frmShip..FontName("Tahoma")
+Gui.frmShip..FontSize(8.25)
+Gui.frmShip..ControlBox(True)
+Gui.frmShip..MaxButton(True)
+Gui.frmShip..MinButton(True)
+Gui.frmShip..Moveable(True)
+Gui.frmShip..Sizeable(True)
+Gui.frmShip..ShowInTaskBar(True)
+Gui.frmShip..TitleBar(True)
+Gui.frmShip.tabShip.Create(Tab)
+Gui.frmShip.tabShip.Size(15120,9015)
+Gui.frmShip.tabShip.Position(15,1125)
+Gui.frmShip.tabShip.Event(Click,tabShip_Click)
+Gui.frmShip.tabShip.Enabled(True)
+Gui.frmShip.tabShip.Visible(True)
+Gui.frmShip.tabShip.Zorder(0)
+Gui.frmShip.tabShip.FontName("Tahoma")
+Gui.frmShip.tabShip.FontSize(8.25)
+Gui.frmShip.tabShip.Tabs(4)
+Gui.frmShip.tabShip.SetTab(0)
+Gui.frmShip.tabShip.Caption("All Open Orders")
+Gui.frmShip.tabShip.SetTab(1)
+Gui.frmShip.tabShip.Caption("Due Today & Past Due")
+Gui.frmShip.tabShip.SetTab(2)
+Gui.frmShip.tabShip.Caption("Staging Data")
+Gui.frmShip.tabShip.SetTab(3)
+Gui.frmShip.tabShip.Caption("All Shipped Orders")
+Gui.frmShip.GsGridControlShipped.Create(GsGridControl)
+Gui.frmShip.GsGridControlShipped.Size(15000,8625)
+Gui.frmShip.GsGridControlShipped.Position(0,0)
+Gui.frmShip.GsGridControlShipped.Parent("tabShip",3)
+Gui.frmShip.GsGridControlShipped.Event(RowCellClick,GsGridControlShipped_RowCellClick)
+Gui.frmShip.GsGridControlShipped.Enabled(True)
+Gui.frmShip.GsGridControlShipped.Visible(True)
+Gui.frmShip.GsGridControlShipped.Zorder(0)
+Gui.frmShip.GsGCStaging.Create(GsGridControl)
+Gui.frmShip.GsGCStaging.Size(15000,8625)
+Gui.frmShip.GsGCStaging.Position(0,0)
+Gui.frmShip.GsGCStaging.Parent("tabShip",2)
+Gui.frmShip.GsGCStaging.Event(RowCellClick,GsGCStaging_RowCellClick)
+Gui.frmShip.GsGCStaging.Enabled(True)
+Gui.frmShip.GsGCStaging.Visible(True)
+Gui.frmShip.GsGCStaging.Zorder(0)
+Gui.frmShip.GsGCAllShip.Create(GsGridControl)
+Gui.frmShip.GsGCAllShip.Size(15000,8625)
+Gui.frmShip.GsGCAllShip.Position(0,0)
+Gui.frmShip.GsGCAllShip.Parent("tabShip",0)
+Gui.frmShip.GsGCAllShip.Event(RowCellClick,GsGCAllShip_RowCellClick)
+Gui.frmShip.GsGCAllShip.Event(CellValueChanged,GsGCAllShip_CellValueChanged)
+Gui.frmShip.GsGCAllShip.Enabled(True)
+Gui.frmShip.GsGCAllShip.Visible(True)
+Gui.frmShip.GsGCAllShip.Zorder(0)
+Gui.frmShip.GsGCDue.Create(GsGridControl)
+Gui.frmShip.GsGCDue.Size(15000,8625)
+Gui.frmShip.GsGCDue.Position(0,0)
+Gui.frmShip.GsGCDue.Parent("tabShip",1)
+Gui.frmShip.GsGCDue.Event(RowCellClick,GsGCDue_RowCellClick)
+Gui.frmShip.GsGCDue.Event(CellValueChanged,GsGCDue_CellValueChanged)
+Gui.frmShip.GsGCDue.Enabled(True)
+Gui.frmShip.GsGCDue.Visible(True)
+Gui.frmShip.GsGCDue.Zorder(0)
+Gui.frmShip.txtORD.Create(TextBox,"",True,1245,300,0,1215,750,False,0,"Arial",8,16744576,1)
+Gui.frmShip.txtORD.Event(KeyPressEnter,txtORD_KeyPressEnter)
+Gui.frmShip.txtORD.MaxLength(7)
+Gui.frmShip.txtORD.ToolTip("Type or Scan SO to Ship")
+Gui.frmShip.lblSo.Create(Label,"Sales Order:",True,1110,255,1,90,825,True,0,"Arial",9,-2147483633,0,0)
+Gui.frmShip.lblSo.BorderStyle(0)
+Gui.frmShip.frameLegend.Create(Frame)
+Gui.frmShip.frameLegend.Size(2445,810)
+Gui.frmShip.frameLegend.Position(10545,75)
+Gui.frmShip.frameLegend.BackColor(15790320)
+Gui.frmShip.frameLegend.Enabled(True)
+Gui.frmShip.frameLegend.Visible(True)
+Gui.frmShip.frameLegend.Zorder(0)
+Gui.frmShip.frameLegend.Caption("")
+Gui.frmShip.frameLegend.FontName("Tahoma")
+Gui.frmShip.frameLegend.FontSize(8.25)
+Gui.frmShip.piclegend.Create(PictureBox)
+Gui.frmShip.piclegend.Size(240,240)
+Gui.frmShip.piclegend.Position(75,165)
+Gui.frmShip.piclegend.Parent("frameLegend")
+Gui.frmShip.piclegend.BackColor(13353215)
+Gui.frmShip.piclegend.ForeColor(3937500)
+Gui.frmShip.piclegend.Enabled(True)
+Gui.frmShip.piclegend.Visible(True)
+Gui.frmShip.piclegend.Zorder(0)
+Gui.frmShip.lblLegend.Create(Label,"- On Hold",True,810,255,0,330,225,True,0,"Segoe UI Semibold",8,-2147483633,0,0)
+Gui.frmShip.lblLegend.Parent("frameLegend")
+Gui.frmShip.lblLegend.BorderStyle(0)
+Gui.frmShip.picKey.Create(PictureBox)
+Gui.frmShip.picKey.Size(240,240)
+Gui.frmShip.picKey.Position(75,480)
+Gui.frmShip.picKey.Parent("frameLegend")
+Gui.frmShip.picKey.BackColor(9498256)
+Gui.frmShip.picKey.Enabled(True)
+Gui.frmShip.picKey.Visible(True)
+Gui.frmShip.picKey.Zorder(0)
+Gui.frmShip.lblOnHand.Create(Label,"- Enough On Hand To Ship",True,2100,255,0,300,525,True,0,"Segoe UI Semibold",8,-2147483633,0,0)
+Gui.frmShip.lblOnHand.Parent("frameLegend")
+Gui.frmShip.lblOnHand.BorderStyle(0)
+Gui.frmShip.lbl1.Create(Label,"Loading Shipments....",False,1935,255,0,1500,165,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmShip.lbl1.BorderStyle(0)
+Gui.frmShip.progressBar1.Create(ProgressBar)
+Gui.frmShip.progressBar1.Size(2430,255)
+Gui.frmShip.progressBar1.Position(1500,405)
+Gui.frmShip.progressBar1.Visible(False)
+Gui.frmShip.picGSSLogo.Create(PictureBox)
+Gui.frmShip.picGSSLogo.Size(4125,960)
+Gui.frmShip.picGSSLogo.Position(5520,45)
+Gui.frmShip.picGSSLogo.Event(DblClick,picGSSLogo_DblClick)
+Gui.frmShip.picGSSLogo.ToolTip("Double-Click for additional functions")
+Gui.frmShip.picGSSLogo.Enabled(True)
+Gui.frmShip.picGSSLogo.Visible(True)
+Gui.frmShip.picGSSLogo.Zorder(0)
+Gui.frmShip.frameLeg2.Create(Frame)
+Gui.frmShip.frameLeg2.Visible(False)
+Gui.frmShip.frameLeg2.Size(2445,810)
+Gui.frmShip.frameLeg2.Position(10545,75)
+Gui.frmShip.frameLeg2.Enabled(True)
+Gui.frmShip.frameLeg2.Zorder(0)
+Gui.frmShip.frameLeg2.Caption("")
+Gui.frmShip.frameLeg2.FontName("Tahoma")
+Gui.frmShip.frameLeg2.FontSize(8.25)
+Gui.frmShip.picLeg1.Create(PictureBox)
+Gui.frmShip.picLeg1.Size(240,240)
+Gui.frmShip.picLeg1.Position(75,165)
+Gui.frmShip.picLeg1.Parent("frameLeg2")
+Gui.frmShip.picLeg1.BackColor(14745599)
+Gui.frmShip.picLeg1.Enabled(True)
+Gui.frmShip.picLeg1.Visible(True)
+Gui.frmShip.picLeg1.Zorder(0)
+Gui.frmShip.picLeg2.Create(PictureBox)
+Gui.frmShip.picLeg2.Size(240,240)
+Gui.frmShip.picLeg2.Position(75,480)
+Gui.frmShip.picLeg2.Parent("frameLeg2")
+Gui.frmShip.picLeg2.BackColor(9498256)
+Gui.frmShip.picLeg2.Enabled(True)
+Gui.frmShip.picLeg2.Visible(True)
+Gui.frmShip.picLeg2.Zorder(0)
+Gui.frmShip.lblLeg1.Create(Label,"- Selected For Invoicing",True,1935,255,0,330,210,True,0,"Segoe UI Semibold",8,-2147483633,0,0)
+Gui.frmShip.lblLeg1.Parent("frameLeg2")
+Gui.frmShip.lblLeg1.BorderStyle(0)
+Gui.frmShip.lblLeg2.Create(Label,"- Invoice Batch",True,1935,255,0,330,525,True,0,"Segoe UI Semibold",8,-2147483633,0,0)
+Gui.frmShip.lblLeg2.Parent("frameLeg2")
+Gui.frmShip.lblLeg2.BorderStyle(0)
+Gui.frmShip.framePermissions.Create(Frame)
+Gui.frmShip.framePermissions.Size(1965,420)
+Gui.frmShip.framePermissions.Position(13080,555)
+Gui.frmShip.framePermissions.Enabled(True)
+Gui.frmShip.framePermissions.Visible(True)
+Gui.frmShip.framePermissions.Zorder(0)
+Gui.frmShip.framePermissions.Caption("")
+Gui.frmShip.framePermissions.FontName("Tahoma")
+Gui.frmShip.framePermissions.FontSize(8.25)
+Gui.frmShip.optShip.Create(Option)
+Gui.frmShip.optShip.Enabled(False)
+Gui.frmShip.optShip.Size(690,255)
+Gui.frmShip.optShip.Position(1050,120)
+Gui.frmShip.optShip.Caption("Ship")
+Gui.frmShip.optShip.Parent("framePermissions")
+Gui.frmShip.optShip.Event(Click,optShip_Click)
+Gui.frmShip.optShip.Visible(True)
+Gui.frmShip.optShip.Zorder(0)
+Gui.frmShip.optShip.FontName("Tahoma")
+Gui.frmShip.optShip.FontSize(8.25)
+Gui.frmShip.optView.Create(Option)
+Gui.frmShip.optView.Size(750,240)
+Gui.frmShip.optView.Position(195,120)
+Gui.frmShip.optView.Caption("View")
+Gui.frmShip.optView.Parent("framePermissions")
+Gui.frmShip.optView.Event(Click,optShip_Click)
+Gui.frmShip.optView.Enabled(True)
+Gui.frmShip.optView.Visible(True)
+Gui.frmShip.optView.Zorder(0)
+Gui.frmShip.optView.FontName("Tahoma")
+Gui.frmShip.optView.FontSize(8.25)
+Gui.frmShip.frameButtons.Create(Frame)
+Gui.frmShip.frameButtons.Size(1965,600)
+Gui.frmShip.frameButtons.Position(13080,75)
+Gui.frmShip.frameButtons.Enabled(True)
+Gui.frmShip.frameButtons.Visible(True)
+Gui.frmShip.frameButtons.Zorder(0)
+Gui.frmShip.frameButtons.Caption("")
+Gui.frmShip.frameButtons.FontName("Tahoma")
+Gui.frmShip.frameButtons.FontSize(8.25)
+Gui.frmShip.cmdRefresh.Create(Button)
+Gui.frmShip.cmdRefresh.Size(840,375)
+Gui.frmShip.cmdRefresh.Position(90,165)
+Gui.frmShip.cmdRefresh.Caption("REFRESH")
+Gui.frmShip.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.frmShip.cmdRefresh.Parent("frameButtons")
+Gui.frmShip.cmdRefresh.Enabled(True)
+Gui.frmShip.cmdRefresh.Visible(True)
+Gui.frmShip.cmdRefresh.Zorder(0)
+Gui.frmShip.cmdRefresh.FontName("Tahoma")
+Gui.frmShip.cmdRefresh.FontSize(8.25)
+Gui.frmShip.cmdExport.Create(Button)
+Gui.frmShip.cmdExport.Size(840,375)
+Gui.frmShip.cmdExport.Position(1005,150)
+Gui.frmShip.cmdExport.Caption("Export")
+Gui.frmShip.cmdExport.Event(Click,cmdExport_Click)
+Gui.frmShip.cmdExport.Parent("frameButtons")
+Gui.frmShip.cmdExport.Enabled(True)
+Gui.frmShip.cmdExport.Visible(True)
+Gui.frmShip.cmdExport.Zorder(0)
+Gui.frmShip.cmdExport.FontName("Tahoma")
+Gui.frmShip.cmdExport.FontSize(8.25)
+Gui.frmShip.frameAutoRef.Create(Frame)
+Gui.frmShip.frameAutoRef.Size(1245,630)
+Gui.frmShip.frameAutoRef.Position(105,60)
+Gui.frmShip.frameAutoRef.Caption("Refr. (Mins.)")
+Gui.frmShip.frameAutoRef.Enabled(True)
+Gui.frmShip.frameAutoRef.Visible(True)
+Gui.frmShip.frameAutoRef.Zorder(0)
+Gui.frmShip.frameAutoRef.FontName("Tahoma")
+Gui.frmShip.frameAutoRef.FontSize(8.25)
+Gui.frmShip.chkAutoRef.Create(CheckBox)
+Gui.frmShip.chkAutoRef.Size(240,300)
+Gui.frmShip.chkAutoRef.Position(135,255)
+Gui.frmShip.chkAutoRef.Parent("frameAutoRef")
+Gui.frmShip.chkAutoRef.Event(Click,chkAutoRef_Click)
+Gui.frmShip.chkAutoRef.Enabled(True)
+Gui.frmShip.chkAutoRef.Visible(True)
+Gui.frmShip.chkAutoRef.Zorder(0)
+Gui.frmShip.chkAutoRef.Caption("")
+Gui.frmShip.chkAutoRef.FontName("Tahoma")
+Gui.frmShip.chkAutoRef.FontSize(8.25)
+Gui.frmShip.txtAutoRef.Create(TextBox,"",True,735,300,0,435,240,False,0,"Arial",8,-2147483633,1)
+Gui.frmShip.txtAutoRef.Parent("frameAutoRef")
+Gui.frmShip.txtAutoRef.Event(LostFocus,txtAutoRef_LostFocus)
+Gui.frmShip.txtAutoRef.NumericOnly(True)
+Gui.frmShip.txtAutoRef.MaxLength(2)
+Gui.frmShip.txtAutoRef.Locked(True)
+Gui.frmShip.txtAutoRef.Event(KeyPressEnter,txtAutoRef_LostFocus)
+Gui.frmShip.timerAutoRefresh.Create(Timer)
+Gui.frmShip.timerAutoRefresh.Size(495,345)
+Gui.frmShip.timerAutoRefresh.Position(2550,750)
+Gui.frmShip.timerAutoRefresh.Interval(60000)
+Gui.frmShip.timerAutoRefresh.Event(Timer,timerAutoRefresh_Timer)
+Gui.frmShip.timerAutoRefresh.Enabled(False)
+Gui.frmShipSch..Create(BaseForm)
+Gui.frmShipSch..Caption("Ship Schedule")
+Gui.frmShipSch..Size(7905,8580)
+Gui.frmShipSch..Position(0,0)
+Gui.frmShipSch..BackColor(-2147483633)
+Gui.frmShipSch..MaxButton(False)
+Gui.frmShipSch..MinButton(False)
+Gui.frmShipSch..MousePointer(0)
+Gui.frmShipSch..Event(UnLoad,frmShipSch_UnLoad)
+Gui.frmShipSch..Sizeable(False)
+Gui.frmShipSch..MinX(0)
+Gui.frmShipSch..MinY(0)
+Gui.frmShipSch..AlwaysOnTop(False)
+Gui.frmShipSch..FontName("Tahoma")
+Gui.frmShipSch..FontSize(8.25)
+Gui.frmShipSch..ControlBox(True)
+Gui.frmShipSch..Moveable(True)
+Gui.frmShipSch..ShowInTaskBar(True)
+Gui.frmShipSch..TitleBar(True)
+Gui.frmShipSch.lblOrder.Create(Label,"Order No",True,1005,255,1,30,90,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmShipSch.lblOrder.BorderStyle(0)
+Gui.frmShipSch.lblOrderLn.Create(Label,"Line:",True,420,255,1,1200,90,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmShipSch.lblOrderLn.BorderStyle(0)
+Gui.frmShipSch.txtOrder.Create(TextBox,"",True,1095,300,0,30,300,False,0,"Arial",8,-2147483643,1)
+Gui.frmShipSch.txtOrdLn.Create(TextBox,"",True,450,300,0,1200,300,False,0,"Arial",8,-2147483643,1)
+Gui.frmShipSch.GSGCShipSch.Create(GsGridControl)
+Gui.frmShipSch.GSGCShipSch.Size(7740,7575)
+Gui.frmShipSch.GSGCShipSch.Position(30,675)
+Gui.frmShipSch.GSGCShipSch.Enabled(True)
+Gui.frmShipSch.GSGCShipSch.Visible(True)
+Gui.frmShipSch.GSGCShipSch.Zorder(0)
+Gui.frmItem..Create(BaseForm)
+Gui.frmItem..Caption("Item Details")
+Gui.frmItem..Size(10230,8280)
+Gui.frmItem..MinX(10230)
+Gui.frmItem..MinY(8280)
+Gui.frmItem..Position(0,0)
+Gui.frmItem..BackColor(-2147483633)
+Gui.frmItem..MaxButton(False)
+Gui.frmItem..MinButton(False)
+Gui.frmItem..MousePointer(0)
+Gui.frmItem..Event(UnLoad,frmItem_UnLoad)
+Gui.frmItem..Sizeable(False)
+Gui.frmItem..AlwaysOnTop(False)
+Gui.frmItem..FontName("Tahoma")
+Gui.frmItem..FontSize(8.25)
+Gui.frmItem..ControlBox(True)
+Gui.frmItem..Moveable(True)
+Gui.frmItem..ShowInTaskBar(True)
+Gui.frmItem..TitleBar(True)
+Gui.frmItem.lblItemDesc.Create(Label,"Description",True,1935,255,1,2895,105,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmItem.lblItemDesc.BorderStyle(0)
+Gui.frmItem.lblItemLoc.Create(Label,"Loc",True,480,255,1,2325,105,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmItem.lblItemLoc.BorderStyle(0)
+Gui.frmItem.lblItemPart.Create(Label,"Part",True,1335,255,1,120,105,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmItem.lblItemPart.BorderStyle(0)
+Gui.frmItem.lblOnHand.Create(Label,"Inv. On Hand:",True,1935,255,0,6780,105,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmItem.lblOnHand.BorderStyle(0)
+Gui.frmItem.txtInvOnHand.Create(TextBox,"",True,1215,300,0,6750,330,False,0,"Arial",8,-2147483643,1)
+Gui.frmItem.txtItemDesc.Create(TextBox,"",True,3225,300,0,2880,330,False,0,"Arial",8,-2147483643,1)
+Gui.frmItem.txtItemLoc.Create(TextBox,"",True,480,300,0,2295,330,False,0,"Arial",8,-2147483643,1)
+Gui.frmItem.txtItemPart.Create(TextBox,"",True,2145,300,0,105,330,False,0,"Arial",8,-2147483643,1)
+Gui.frmItem.GSGCItem.Create(GsGridControl)
+Gui.frmItem.GSGCItem.Size(9960,6945)
+Gui.frmItem.GSGCItem.Position(0,705)
+Gui.frmItem.GSGCItem.Enabled(True)
+Gui.frmItem.GSGCItem.Visible(True)
+Gui.frmItem.GSGCItem.Zorder(0)
+Gui.frmWeb..Create(BaseForm)
+Gui.frmWeb..Caption("Global Shop Solutions - Web Sites")
+Gui.frmWeb..Size(3990,2025)
+Gui.frmWeb..MinX(0)
+Gui.frmWeb..MinY(0)
+Gui.frmWeb..Position(0,0)
+Gui.frmWeb..BackColor(-2147483633)
+Gui.frmWeb..MousePointer(0)
+Gui.frmWeb..MaxButton(False)
+Gui.frmWeb..Sizeable(False)
+Gui.frmWeb..Event(UnLoad,frmWeb_UnLoad)
+Gui.frmWeb..MinButton(False)
+Gui.frmWeb..AlwaysOnTop(False)
+Gui.frmWeb..FontName("Tahoma")
+Gui.frmWeb..FontSize(8.25)
+Gui.frmWeb..ControlBox(True)
+Gui.frmWeb..Moveable(True)
+Gui.frmWeb..ShowInTaskBar(True)
+Gui.frmWeb..TitleBar(True)
+Gui.frmWeb.cmdGSS.Create(Button)
+Gui.frmWeb.cmdGSS.Size(3615,375)
+Gui.frmWeb.cmdGSS.Position(120,45)
+Gui.frmWeb.cmdGSS.Caption("Global Shop Solutions")
+Gui.frmWeb.cmdGSS.Event(Click,cmdGSS_Click)
+Gui.frmWeb.cmdGSS.Enabled(True)
+Gui.frmWeb.cmdGSS.Visible(True)
+Gui.frmWeb.cmdGSS.Zorder(0)
+Gui.frmWeb.cmdGSS.FontName("Tahoma")
+Gui.frmWeb.cmdGSS.FontSize(8.25)
+Gui.frmWeb.cmdServ.Create(Button)
+Gui.frmWeb.cmdServ.Size(3615,375)
+Gui.frmWeb.cmdServ.Position(120,450)
+Gui.frmWeb.cmdServ.Caption("ServiceWeb")
+Gui.frmWeb.cmdServ.Event(Click,cmdServ_Click)
+Gui.frmWeb.cmdServ.Enabled(True)
+Gui.frmWeb.cmdServ.Visible(True)
+Gui.frmWeb.cmdServ.Zorder(0)
+Gui.frmWeb.cmdServ.FontName("Tahoma")
+Gui.frmWeb.cmdServ.FontSize(8.25)
+Gui.frmWeb.cmdUpd.Create(Button)
+Gui.frmWeb.cmdUpd.Size(3615,375)
+Gui.frmWeb.cmdUpd.Position(120,855)
+Gui.frmWeb.cmdUpd.Caption("GSS Updates")
+Gui.frmWeb.cmdUpd.Event(Click,cmdUpd_Click)
+Gui.frmWeb.cmdUpd.Enabled(True)
+Gui.frmWeb.cmdUpd.Visible(True)
+Gui.frmWeb.cmdUpd.Zorder(0)
+Gui.frmWeb.cmdUpd.FontName("Tahoma")
+Gui.frmWeb.cmdUpd.FontSize(8.25)
+Gui.frmWeb.cmdResetGsGC.Create(Button)
+Gui.frmWeb.cmdResetGsGC.Size(3615,375)
+Gui.frmWeb.cmdResetGsGC.Position(120,1260)
+Gui.frmWeb.cmdResetGsGC.Caption("Reset All Columns")
+Gui.frmWeb.cmdResetGsGC.Event(Click,cmdResetGsGC_Click)
+Gui.frmWeb.cmdResetGsGC.Enabled(True)
+Gui.frmWeb.cmdResetGsGC.Visible(True)
+Gui.frmWeb.cmdResetGsGC.Zorder(0)
+Gui.frmWeb.cmdResetGsGC.FontName("Tahoma")
+Gui.frmWeb.cmdResetGsGC.FontSize(8.25)
+Gui.frmNotes..Create(BaseForm)
+Gui.frmNotes..Caption("Notes: Order-Line")
+Gui.frmNotes..Size(14460,7425)
+Gui.frmNotes..MinX(0)
+Gui.frmNotes..MinY(0)
+Gui.frmNotes..Position(0,0)
+Gui.frmNotes..BackColor(-2147483633)
+Gui.frmNotes..MousePointer(0)
+Gui.frmNotes..Event(UnLoad,frmNotes_UnLoad)
+Gui.frmNotes..AlwaysOnTop(False)
+Gui.frmNotes..FontName("Tahoma")
+Gui.frmNotes..FontSize(8.25)
+Gui.frmNotes..ControlBox(True)
+Gui.frmNotes..MaxButton(True)
+Gui.frmNotes..MinButton(True)
+Gui.frmNotes..Moveable(True)
+Gui.frmNotes..Sizeable(True)
+Gui.frmNotes..ShowInTaskBar(True)
+Gui.frmNotes..TitleBar(True)
+Gui.frmNotes.GsGCNotes.Create(GsGridControl)
+Gui.frmNotes.GsGCNotes.Size(14310,7125)
+Gui.frmNotes.GsGCNotes.Position(0,0)
+Gui.frmNotes.GsGCNotes.Event(RowCellClick,GsGCNotes_RowCellClick)
+Gui.frmNotes.GsGCNotes.Event(CellValueChanged,GsGCNotes_CellValueChanged)
+Gui.frmNotes.GsGCNotes.Enabled(True)
+Gui.frmNotes.GsGCNotes.Visible(True)
+Gui.frmNotes.GsGCNotes.Zorder(0)
+Gui.frmEmail..Create(BaseForm)
+Gui.frmEmail..Caption("Email")
+Gui.frmEmail..Size(6090,5670)
+Gui.frmEmail..MinX(0)
+Gui.frmEmail..MinY(0)
+Gui.frmEmail..Position(0,0)
+Gui.frmEmail..BackColor(-2147483633)
+Gui.frmEmail..MousePointer(0)
+Gui.frmEmail..Event(UnLoad,frmEmail_UnLoad)
+Gui.frmEmail..MaxButton(False)
+Gui.frmEmail..MinButton(False)
+Gui.frmEmail..Sizeable(False)
+Gui.frmEmail..AlwaysOnTop(False)
+Gui.frmEmail..FontName("Tahoma")
+Gui.frmEmail..FontSize(8.25)
+Gui.frmEmail..ControlBox(True)
+Gui.frmEmail..Moveable(True)
+Gui.frmEmail..ShowInTaskBar(True)
+Gui.frmEmail..TitleBar(True)
+Gui.frmEmail.lblRcpts.Create(Label,"Recipients (Separate multiple contacts by using commas)",True,5550,255,0,105,150,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmEmail.lblRcpts.BorderStyle(0)
+Gui.frmEmail.txtRcpts.Create(TextboxM)
+Gui.frmEmail.txtRcpts.Size(5835,855)
+Gui.frmEmail.txtRcpts.Position(105,360)
+Gui.frmEmail.txtRcpts.Enabled(True)
+Gui.frmEmail.txtRcpts.Visible(True)
+Gui.frmEmail.txtRcpts.Zorder(0)
+Gui.frmEmail.txtRcpts.FontName("Tahoma")
+Gui.frmEmail.txtRcpts.FontSize(8.25)
+Gui.frmEmail.lblSubject.Create(Label,"Subject",True,1935,255,0,105,1305,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmEmail.lblSubject.BorderStyle(0)
+Gui.frmEmail.txtSubject.Create(TextBox,"",True,5835,300,0,105,1515,True,0,"Arial",8,-2147483643,1)
+Gui.frmEmail.lblBody.Create(Label,"Body",True,1935,255,0,105,1905,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmEmail.lblBody.BorderStyle(0)
+Gui.frmEmail.txtBody.Create(TextboxM)
+Gui.frmEmail.txtBody.Size(5835,2715)
+Gui.frmEmail.txtBody.Position(105,2115)
+Gui.frmEmail.txtBody.Enabled(True)
+Gui.frmEmail.txtBody.Visible(True)
+Gui.frmEmail.txtBody.Zorder(0)
+Gui.frmEmail.txtBody.FontName("Tahoma")
+Gui.frmEmail.txtBody.FontSize(8.25)
+Gui.frmEmail.cmdSend.Create(Button)
+Gui.frmEmail.cmdSend.Size(855,375)
+Gui.frmEmail.cmdSend.Position(105,4905)
+Gui.frmEmail.cmdSend.Caption("Send")
+Gui.frmEmail.cmdSend.Event(Click,cmdSend_Click)
+Gui.frmEmail.cmdSend.Enabled(True)
+Gui.frmEmail.cmdSend.Visible(True)
+Gui.frmEmail.cmdSend.Zorder(0)
+Gui.frmEmail.cmdSend.FontName("Tahoma")
+Gui.frmEmail.cmdSend.FontSize(8.25)
+Gui.frmEmail.lblInfo.Create(Label,"*Emails will be sent through Courier",True,2625,255,0,3315,5085,True,0,"Arial",7,-2147483633,0,0)
+Gui.frmEmail.lblInfo.BorderStyle(0)
+Gui.frmText..Create(BaseForm)
+Gui.frmText..Caption("Text Message")
+Gui.frmText..Size(6090,5670)
+Gui.frmText..MinX(0)
+Gui.frmText..MinY(0)
+Gui.frmText..Position(0,0)
+Gui.frmText..BackColor(-2147483633)
+Gui.frmText..MousePointer(0)
+Gui.frmText..Event(UnLoad,frmText_UnLoad)
+Gui.frmText..MaxButton(False)
+Gui.frmText..MinButton(False)
+Gui.frmText..Sizeable(False)
+Gui.frmText..AlwaysOnTop(False)
+Gui.frmText..FontName("Tahoma")
+Gui.frmText..FontSize(8.25)
+Gui.frmText..ControlBox(True)
+Gui.frmText..Moveable(True)
+Gui.frmText..ShowInTaskBar(True)
+Gui.frmText..TitleBar(True)
+Gui.frmText.lblRcpts.Create(Label,"Recipients ###-###-#### (Separate multiple contacts by using commas)",True,5550,255,0,105,150,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmText.lblRcpts.BorderStyle(0)
+Gui.frmText.txtRcpts.Create(TextboxM)
+Gui.frmText.txtRcpts.Size(5835,855)
+Gui.frmText.txtRcpts.Position(105,360)
+Gui.frmText.txtRcpts.Enabled(True)
+Gui.frmText.txtRcpts.Visible(True)
+Gui.frmText.txtRcpts.Zorder(0)
+Gui.frmText.txtRcpts.FontName("Tahoma")
+Gui.frmText.txtRcpts.FontSize(8.25)
+Gui.frmText.lblSubject.Create(Label,"Subject",True,1935,255,0,105,1305,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmText.lblSubject.BorderStyle(0)
+Gui.frmText.txtSubject.Create(TextBox,"",True,5835,300,0,105,1515,True,0,"Arial",8,-2147483643,1)
+Gui.frmText.lblBody.Create(Label,"Body",True,1935,255,0,105,1905,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmText.lblBody.BorderStyle(0)
+Gui.frmText.txtBody.Create(TextboxM)
+Gui.frmText.txtBody.Size(5835,2715)
+Gui.frmText.txtBody.Position(105,2115)
+Gui.frmText.txtBody.Enabled(True)
+Gui.frmText.txtBody.Visible(True)
+Gui.frmText.txtBody.Zorder(0)
+Gui.frmText.txtBody.FontName("Tahoma")
+Gui.frmText.txtBody.FontSize(8.25)
+Gui.frmText.cmdSend.Create(Button)
+Gui.frmText.cmdSend.Size(855,375)
+Gui.frmText.cmdSend.Position(105,4905)
+Gui.frmText.cmdSend.Caption("Send")
+Gui.frmText.cmdSend.Event(Click,cmdSendText_Click)
+Gui.frmText.cmdSend.Enabled(True)
+Gui.frmText.cmdSend.Visible(True)
+Gui.frmText.cmdSend.Zorder(0)
+Gui.frmText.cmdSend.FontName("Tahoma")
+Gui.frmText.cmdSend.FontSize(8.25)
+Gui.frmText.lblInfo.Create(Label,"*Text Messages will be sent through Courier",True,3255,255,0,2685,5085,True,0,"Arial",7,-2147483633,0,0)
+Gui.frmText.lblInfo.BorderStyle(0)
+Gui.frmText.ddl1.Create(DropDownList)
+Gui.frmText.ddl1.Size(1590,330)
+Gui.frmText.ddl1.Position(1005,4920)
+Gui.frmText.ddl1.Enabled(True)
+Gui.frmText.ddl1.Visible(True)
+Gui.frmText.ddl1.Zorder(0)
+Gui.frmText.ddl1.FontName("Tahoma")
+Gui.frmText.ddl1.FontSize(8.25)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+	V.Global.bRefresh.Declare(Boolean,False)
+	V.Global.bSecs.Declare(Boolean,False)
+	V.Global.iTimerMili.Declare
+	V.Global.iTimerMili2.Declare
+	V.Global.iTimerDiff.Declare
+	V.Global.iCnt.Declare
+	V.Global.iSecs.Declare
+	V.Global.bShip.Declare
+	V.Global.sUserEmail.Declare
+	V.Global.sOrderNo.Declare
+	V.Global.sOrderLn.Declare
+	V.Global.sCustomer.Declare
+	V.Global.sSalesperson.Declare
+	V.Global.sPart.Declare
+	V.Global.sPaerDesc.Declare
+	V.Global.fQty.Declare
+	V.Global.sCustPO.Declare
+	V.Global.dDueDate.Declare
+	V.Global.bLoadData.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	'This project was originally numbered 5087, original script name is GAB_5087_Ship_Review_Track_Notes.g2u. According to the GAP entry wizard, Alan Cardenaz was the coder, but most likely began as a project created by Andres Valdez.
+	'This is a Shipping Dashboard, modified by FEQ on 12/10 for Whittle Flooring Company Limited. This modification is simply adding the user fields 1-5 from the order entry lines, as well as teh Order Sort from teh Order Entry header.
+	
+	V.Local.sIcon.Declare(String)
+	V.Local.bShipGrp.Declare(Boolean)
+	V.Local.sGssLogo.Declare
+
+	F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+	F.Intrinsic.String.Build("{0}\GAB\GAS\GAB_GSS_Logo_Green_Dash.png",V.Caller.PluginsDir,V.Local.sGssLogo)
+	Gui.frmWeb..Icon(V.Local.sIcon)
+	Gui.frmShip.picGSSLogo.Picture(V.Local.sGssLogo)
+	Gui.frmShip..Icon(V.Local.sIcon)
+	Gui.frmItem..Icon(V.Local.sIcon)
+	Gui.frmShipSch..Icon(V.Local.sIcon)
+	Gui.frmNotes..Icon(V.Local.sIcon)
+	Gui.frmEmail..Icon(V.Local.sIcon)
+	Gui.frmText..Icon(V.Local.sIcon)
+
+	Gui.frmShip.optView.Value(True)
+	Gui.frmShip.optShip.Value(False)
+	Gui.frmShip.txtORD.BackColor(-2147483633)
+
+	Gui.frmShip.tabShip.SetTab(0)
+
+	F.Intrinsic.Control.CallSub(SetAnchors)
+	F.Intrinsic.Control.CallSub(SetContextMenus)
+	F.Intrinsic.Control.CallSub(SetCarriers)
+	
+	F.Global.Security.GetUserEmail(V.Caller.User,V.Caller.CompanyCode,V.Global.sUserEmail)
+
+	'Check if the User is in the SHIP Group, to enable the Ship button
+	F.Global.Security.IsInGroup(V.Caller.User,"SHIP",v.Local.bShipGrp)
+	F.Intrinsic.Control.If(V.Local.bShipGrp,=,True)
+		Gui.frmShip.optShip.Enabled(1)
+		V.Global.bShip.Set(True)
+	F.Intrinsic.Control.Else
+		Gui.frmShip.optShip.Enabled(0)
+		V.Global.bShip.Set(False)
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,600)
+	Gui.frmShip..Show
+	F.Intrinsic.Control.CallSub(SetTabAnchors)
+	f.Intrinsic.Control.CallSub(checktable)
+	F.Intrinsic.Control.CallSub(disablecontrols)
+	F.Intrinsic.Control.BlockEvents
+	F.Intrinsic.Control.CallSub(loadDTAllShip)
+	F.Intrinsic.Control.CallSub(loadDTDueShip)
+	f.Intrinsic.Control.CallSub(loaddtstaging)
+	f.Intrinsic.Control.CallSub(loaddtshipped)
+	F.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.Control.CallSub(enablecontrols)
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.checkTable.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.bExists.Declare
+	
+	F.ODBC.Connection!con.TableExists("GAB_4595_NOTES",V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists,=,False)
+		f.ODBC.Connection!con.Execute("CREATE TABLE GAB_4595_NOTES(NID IDENTITY,ORDER_NO CHAR(7),ORDER_LINE CHAR(4),GSUSER CHAR(8),CREATE_DT DATE,CREATE_TIME TIME,NOTES LONGVARCHAR,PRIMARY KEY(NID));")
+		F.ODBC.Connection!con.Execute("CREATE INDEX GAB_4595_NOTES01 USING 1 ON GAB_4595_NOTES(ORDER_NO);")
+		F.ODBC.Connection!con.Execute("CREATE INDEX GAB_4595_NOTES02 USING 2 ON GAB_4595_NOTES(ORDER_LINE);")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.checkTable.End
+
+Program.Sub.SetAnchors.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+
+	Gui.frmShip.picGSSLogo.Anchor(1)
+	Gui.frmShip.frameButtons.Anchor(9)
+	Gui.frmShip.framePermissions.Anchor(9)
+	Gui.frmShip.tabShip.Anchor(15)
+	Gui.frmShip.frameLegend.Anchor(9)
+	Gui.frmShip.txtORD.Anchor(5)
+	Gui.frmShip.lblSo.Anchor(5)
+	Gui.frmShip.frameLeg2.Anchor(9)
+	Gui.frmNotes.GsGCNotes.Anchor(15)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetAnchors.End
+
+Program.Sub.SetTabAnchors.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+
+	Gui.frmShip.GsGCAllShip.Anchor(15)
+	Gui.frmShip.GsGCDue.Anchor(15)
+	Gui.frmShip.GsGridControlShipped.Anchor(15)
+	Gui.frmShip.GsGCStaging.Anchor(15)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetTabAnchors.End
+
+Program.Sub.cmdRefresh_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(disablecontrols)
+	F.Intrinsic.Control.BlockEvents
+	F.Intrinsic.Control.CallSub(loadDTAllShip)
+	F.Intrinsic.Control.CallSub(loadDTDueShip)
+	F.Intrinsic.Control.CallSub(loaddtstaging)
+	F.Intrinsic.Control.CallSub(loaddtshipped)
+	F.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.Control.CallSub(enablecontrols)
+	F.Intrinsic.Control.CallSub(txtAutoRef_LostFocus)
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.frmShip_Resize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	v.Local.iWidth.Declare
+	v.Local.iHeight.Declare
+	V.Local.iX.Declare
+
+	F.Intrinsic.Math.Div(V.Screen.frmShip.Width,2,V.Local.iX)
+	F.Intrinsic.Math.Sub(V.Local.iX,2000,V.Local.iX)
+	Gui.frmShip.picGSSLogo.Position(V.Local.iX,45)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmShip_Resize.End
+
+Program.Sub.frmShip_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.Close
+	F.Intrinsic.Control.End
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmShip_UnLoad.End
+
+Program.Sub.optShip_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.frmShip!optShip.Value)
+		Gui.frmShip.txtORD.Enabled(True)
+		Gui.frmShip.txtORD.BackColor(16744576)
+		Gui.frmShip.txtORD.ForeColor(V.Color.White)
+	F.Intrinsic.Control.Else
+		Gui.frmShip.txtORD.Enabled(False)
+		Gui.frmShip.txtORD.Text("")
+		Gui.frmShip.txtORD.BackColor(-2147483633)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.optShip_Click.End
+
+Program.Sub.tabShip_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	f.Intrinsic.Control.If(v.Screen.frmShip!tabShip.Tab,=,3)
+		Gui.frmShip.frameLegend.Visible(false)
+		Gui.frmShip.frameLeg2.Visible(true)
+	f.Intrinsic.Control.Else
+		Gui.frmShip.frameLeg2.Visible(false)
+		Gui.frmShip.frameLegend.Visible(true)
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.tabShip_Click.End
+
+Program.Sub.DisableControls.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmShip.frameButtons.Enabled(False)
+	Gui.frmShip.framePermissions.Enabled(False)
+	Gui.frmShip.tabShip.Enabled(False)
+	Gui.frmShip.GsGCAllShip.Visible(False)
+	Gui.frmShip.GsGCDue.Visible(False)
+	Gui.frmShip.GsGCStaging.Visible(False)
+	Gui.frmShip.GsGridControlShipped.Visible(False)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.DisableControls.End
+
+Program.Sub.EnableControls.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmShip.frameButtons.Enabled(True)
+	Gui.frmShip.framePermissions.Enabled(True)
+	Gui.frmShip.tabShip.Enabled(True)
+	Gui.frmShip.GsGCAllShip.Visible(True)
+	Gui.frmShip.GsGCDue.Visible(True)
+	Gui.frmShip.GsGCStaging.Visible(True)
+	Gui.frmShip.GsGridControlShipped.Visible(True)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.EnableControls.End
+
+Program.Sub.txtORD_KeyPressEnter.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.frmShip!optShip.Value,=,True)
+		F.Intrinsic.Control.CallSub(disablecontrols)
+		F.Global.General.CallWrapperSync(4010,V.Screen.frmShip!txtORD.Text)
+		F.Intrinsic.Control.CallSub(enablecontrols)
+		Gui.frmShip.txtORD.Text("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.txtORD_KeyPressEnter.End
+
+Program.Sub.loadDTAllShip.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmShip.lbl1.Visible(True)
+	Gui.frmShip.lbl1.ForeColor(V.Color.Black)
+	Gui.frmShip.lbl1.Caption("Loading Shipments....")
+
+	F.Intrinsic.Control.If(V.DataTable.dtAllShip.Exists)
+		F.Data.DataTable.Close("dtAllShip")
+		Gui.frmShip.GsGCAllShip.ClearGrouping("gvAllShip")
+	F.Intrinsic.Control.EndIf
+		
+	V.Global.bLoadData.Set(True)
+	'FEQ modification 12/10/2018. Adding Userfieds 1-5 from OE lines and ORDER_SORT from OE Header, and now Job (12/18/2018)
+'	F.Data.DataTable.CreateFromSQL("dtAllShip","con","Select CASE WHEN VOL.PICK_LIST_PRINTED = 'Y' THEN 'RePrint' ELSE 'Print' END AS PickLs,VOL.CUSTOMER,VOH.CUSTOMER_PO,VCM.NAME_CUSTOMER,VOL.PRODUCT_LINE,VOL.LOCATION,VOL.PART,VOL.DESCRIPTION,VOL.ORDER_NO,LEFT(VOL.Record_NO,3) AS RECORD_NO,CASE WHEN VOL.FLAG_USE_MQD != 'Y' THEN VOL.QTY_BO WHEN FLAG_USE_MQD = 'Y' THEN VOSS.QTY_OPEN END AS QTY_BO,VOL.WEIGHT,CASE WHEN VOL.FLAG_USE_MQD != 'Y' THEN VOL.DATE_ITEM_PROM WHEN FLAG_USE_MQD = 'Y' THEN IF(VOSS.DATE_DUE = '1900-01-01',CONVERT('9999-12-31',SQL_DATE),VOSS.DATE_DUE) END AS DATE_ITEM_PROM,VIM.QTY_ONHAND,VOL.SHIP_ID,VOS.CITY_SHIP,VOS.SHIP_VIA_SHIP,VOS.CARRIER_CD,CONVERT(VOL.STAGED,SQL_BIT) AS STAGED,CASE WHEN FLAG_USE_MQD = 'Y' THEN 'Ship Schd' ELSE '-' END AS FLAG_USE_MQD,CASE WHEN VOH.SHP_HLD_FLAG = 02 OR VOH.SHP_HLD_FLAG = 04 THEN CONVERT(1,SQL_BIT) WHEN VOH.SHP_HLD_FLAG = NULL THEN CONVERT(0,SQL_BIT) ELSE CONVERT(0,SQL_BIT) END AS SHP_HLD_FLAG,VOL.QTY_SHIPPED,'Notes' AS NOTES,'' As LASTNOTE,VOL.USER_1,VOL.USER_4,Cast(Concat(VOL.Order_No,VOL.Record_No) as CHAR(10)) As ORDREC,VOH.SALESPERSON From V_ORDER_LINES VOL LEFT JOIN V_OE_SHIP_SCHED VOSS ON VOSS.ORDER_NO = VOL.ORDER_NO AND VOSS.ORDER_LINE = VOL.RECORD_NO LEFT JOIN V_CUSTOMER_MASTER VCM ON VOL.CUSTOMER=VCM.CUSTOMER LEFT JOIN V_INVENTORY_MSTR VIM ON VOL.PART = VIM.PART AND VOL.LOCATION=VIM.LOCATION LEFT JOIN V_ORDER_SHIP_TO VOS ON VOS.ORDER_NO = VOL.ORDER_NO and VOS.SHIP_ID = VOL.SHIP_ID LEFT JOIN V_ORDER_HEADER VOH ON VOL.ORDER_NO = VOH.ORDER_NO WHERE VOH.RECORD_NO = '  A' AND QTY_BO <> 0 ORDER BY DATE_ITEM_PROM;",True)
+
+	F.Data.DataTable.CreateFromSQL("dtAllShip","con","Select CASE WHEN VOL.PICK_LIST_PRINTED = 'Y' THEN 'RePrint' ELSE 'Print' END AS PickLs,VOL.CUSTOMER,VOH.CUSTOMER_PO,VOH.CODE_SORT,VCM.NAME_CUSTOMER,'' AS JOB,VOL.PRODUCT_LINE,VOL.LOCATION,RTRIM(VOL.PART) as PART,VOL.DESCRIPTION,VOL.ORDER_NO,LEFT(VOL.Record_NO,3) AS RECORD_NO,CASE WHEN VOL.FLAG_USE_MQD != 'Y' THEN VOL.QTY_BO WHEN FLAG_USE_MQD = 'Y' THEN VOSS.QTY_OPEN END AS QTY_BO,VOL.WEIGHT,CASE WHEN VOL.FLAG_USE_MQD != 'Y' THEN VOL.DATE_ITEM_PROM WHEN FLAG_USE_MQD = 'Y' THEN IF(VOSS.DATE_DUE = '1900-01-01',CONVERT('9999-12-31',SQL_DATE),VOSS.DATE_DUE) END AS DATE_ITEM_PROM,VIM.QTY_ONHAND,VOL.SHIP_ID,VOS.CITY_SHIP,VOS.SHIP_VIA_SHIP,VOS.CARRIER_CD,CONVERT(VOL.STAGED,SQL_BIT) AS STAGED,CASE WHEN FLAG_USE_MQD = 'Y' THEN 'Ship Schd' ELSE '-' END AS FLAG_USE_MQD,CASE WHEN VOH.SHP_HLD_FLAG = 02 OR VOH.SHP_HLD_FLAG = 04 THEN CONVERT(1,SQL_BIT) WHEN VOH.SHP_HLD_FLAG = NULL THEN CONVERT(0,SQL_BIT) ELSE CONVERT(0,SQL_BIT) END AS SHP_HLD_FLAG,VOL.QTY_SHIPPED,'Notes' AS NOTES,'' As LASTNOTE,VOL.USER_1,VOL.USER_2,VOL.USER_3,VOL.USER_4,VOL.USER_5,Cast(0 as Double) as QTY_ALLOC,VOL.Order_NO+'-'+left(VOL.Record_No,3) as ORD_REC,Cast(Concat(VOL.Order_No,VOL.Record_No) as CHAR(10)) As ORDREC,VOH.SALESPERSON From V_ORDER_LINES VOL LEFT JOIN V_OE_SHIP_SCHED VOSS ON VOSS.ORDER_NO = VOL.ORDER_NO AND VOSS.ORDER_LINE = VOL.RECORD_NO LEFT JOIN V_CUSTOMER_MASTER VCM ON VOL.CUSTOMER=VCM.CUSTOMER LEFT JOIN V_INVENTORY_MSTR VIM ON VOL.PART = VIM.PART AND VOL.LOCATION=VIM.LOCATION LEFT JOIN V_ORDER_SHIP_TO VOS ON VOS.ORDER_NO = VOL.ORDER_NO and VOS.SHIP_ID = VOL.SHIP_ID LEFT JOIN V_ORDER_HEADER VOH ON VOL.ORDER_NO = VOH.ORDER_NO WHERE VOH.RECORD_NO = '  A' AND QTY_BO <> 0 ORDER BY DATE_ITEM_PROM;",True)
+	
+	F.Data.Dictionary.CreateFromSQL("dNotes","con","Select Cast(Concat(ORDER_NO,ORDER_LINE) as CHAR(10)) As ORDREC,RTrim(Notes) as Notes From GAB_4595_NOTES ORDER BY CREATE_DT DESC,CREATE_TIME DESC;")
+	F.Data.Dictionary.SetDefaultReturn("dNotes","")
+	F.Data.DataTable.FillFromDictionary("dtAllShip","dNotes","ORDREC","LASTNOTE")
+	F.Data.Dictionary.Close("dNotes")
+			
+	F.Data.Dictionary.CreateFromSQL("dicJob","con","Select Right('0000000'+CAST(Order_No as VarChar(7)), 7)+ Left(ORDER_LINE, 3) as PaddedOrdNo, info from OE_SHIP_SCHED")
+	F.Data.Dictionary.SetDefaultReturn("dicJob","")
+	F.Data.DataTable.FillFromDictionary("dtAllShip","dicJob","ORDREC","Job")
+	F.Data.Dictionary.Close("dicJob")
+	
+	F.Data.Dictionary.CreateFromSQL("ALLOC","con","Select rtrim(Heat) as ORD_REC, Sum(Quantity) as Qty_Alloc From V_Item_Master Group by Heat;")
+	F.Data.Dictionary.SetDefaultReturn("ALLOC",0)
+	F.Data.DataTable.FillFromDictionary("dtAllShip","ALLOC","ORD_REC","Qty_Alloc")
+	F.Data.Dictionary.Close("ALLOC")
+	
+	'BP - add LWT and Weight
+	f.Data.Datatable.AddColumn("dtAllShip","Length","Float")
+	f.Data.Datatable.AddColumn("dtAllShip","Width","Float")
+	f.Data.Datatable.AddColumn("dtAllShip","Thickness","Float")
+	f.Data.Datatable.AddColumn("dtAllShip","Part_Weight","Float")
+	
+	f.Data.Datatable.CreateFromSQL("dtLWT","con","Select RTRIM(PART) as PART,LENGTH, WIDTH, THICKNESS from GAB_4814_INV_LWTD")
+	f.Data.Dictionary.CreateFromDatatable("dLength","dtLWT","PART","LENGTH")
+	f.Data.Dictionary.CreateFromDatatable("dWidth","dtLWT","PART","WIDTH")
+	f.Data.Dictionary.CreateFromDatatable("dThickness","dtLWT","PART","THICKNESS")
+	
+	f.Data.Dictionary.SetDefaultReturn("dLength",0)
+	f.Data.Dictionary.SetDefaultReturn("dWidth",0)
+	f.Data.Dictionary.SetDefaultReturn("dThickness",0)
+	
+	f.Data.Datatable.FillFromDictionary("dtAllShip","dLength","PART","Length")
+	f.Data.Datatable.FillFromDictionary("dtAllShip","dWidth","PART","Width")
+	f.Data.Datatable.FillFromDictionary("dtAllShip","dThickness","PART","Thickness")
+	
+	f.Data.Dictionary.CreateFromSQL("dWeight","con","Select RTRIM(PART) as PART, LBS from V_INVENTORY_MST2")
+	f.Data.Dictionary.SetDefaultReturn("dWeight",0)
+	f.Data.Datatable.FillFromDictionary("dtAllShip","dWeight","PART","Part_Weight")
+
+	F.Intrinsic.Control.CallSub(loadDVGVAllShip)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDTAllShip.End
+
+Program.Sub.loadDVGVAllShip.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	V.Local.bHold.Declare
+
+	Gui.frmShip.GsGCAllShip.AddGridViewFromDataTable("gvAllShip","dtAllShip")
+	Gui.frmShip.GsGCAllShip.MainView("gvAllShip")
+	Gui.frmShip.GsGCAllShip.SuspendLayout()
+	Gui.frmShip.GsGCAllShip.SetGridViewProperty("gvAllShip","MultiSelect",True)
+	Gui.frmShip.GsGCAllShip.SetGridViewProperty("gvAllShip","OptionBehaviorEditable",True)
+	Gui.frmShip.GsGCAllShip.SetGridViewProperty("gvAllShip","AllowSort",True)
+	Gui.frmShip.GsGCAllShip.SetGridViewProperty("gvAllShip","AllowFilter",True)
+	Gui.frmShip.GsGCAllShip.SetGridViewProperty("gvAllShip","OptionsDetailShowDetailTabs",False)
+	Gui.frmShip.GsGCAllShip.SetGridViewProperty("gvAllShip","OptionsViewShowGroupPanel",True)
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","VisibleIndex","0")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","ShowCaption",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","ShowCaption",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","ShowCaption",False)
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","SHIP_ID","Visible",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CUSTOMER","Visible",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_SHIPPED","Visible",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","SHP_HLD_FLAG","Visible",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORDREC","Visible",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","SALESPERSON","Visible",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Qty_Alloc","Visible",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORD_REC","Visible",False)
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LASTNOTE","ReadOnly",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CODE_SORT","ReadOnly",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_1","ReadOnly",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_2","ReadOnly",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_3","ReadOnly",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_4","ReadOnly",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_5","ReadOnly",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Job","ReadOnly",True)
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NAME_CUSTOMER","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CUSTOMER_PO","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PRODUCT_LINE","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LOCATION","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PART","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DESCRIPTION","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORDER_NO","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","RECORD_NO","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_BO","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","WEIGHT","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DATE_ITEM_PROM","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_ONHAND","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CITY_SHIP","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","SHIP_VIA_SHIP","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CARRIER_CD","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","STAGED","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LASTNOTE","AllowEdit",True)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Job","AllowEdit",False)
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","Caption","PickLs")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NAME_CUSTOMER","Caption","Customer Name")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CUSTOMER_PO","Caption","Customer PO")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PRODUCT_LINE","Caption","PL")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LOCATION","Caption","Loc")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PART","Caption","Part Number")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DESCRIPTION","Caption","Part Description")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORDER_NO","Caption","Order #")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CODE_SORT","Caption","Line No.")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","RECORD_NO","Caption","Ln")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_BO","Caption","Open Qty")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","WEIGHT","Caption","Tot. Weight")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DATE_ITEM_PROM","Caption","Ship Date")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_ONHAND","Caption","Qty On Hand")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CITY_SHIP","Caption","Ship City")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","SHIP_VIA_SHIP","Caption","Ship Via")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CARRIER_CD","Caption","Carrier")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","STAGED","Caption","Staged ")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","Caption","Ship Schd")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","Caption","Notes")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LASTNOTE","Caption","Last Note")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_1","Caption","USER FIELD 1 (30 Characters)")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_2","Caption","USER FIELD 2 (30 Characters)")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_3","Caption","USER FIELD 3 (30 Characters)")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_4","Caption","USER FIELD 4 (30 Characters)")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_5","Caption","USER FIELD 5 (30 Characters)")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Job","Caption","Job")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Part_Weight","Caption","Inv. Weight")
+	
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","MinWidth","45")	
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NAME_CUSTOMER","MinWidth","175")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CUSTOMER_PO","MinWidth","100")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PRODUCT_LINE","MinWidth","25")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LOCATION","MinWidth","30")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PART","MinWidth","150")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CODE_SORT","MinWidth","100")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DESCRIPTION","MinWidth","200")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DESCRIPTION","MaxWidth","250")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORDER_NO","MinWidth","50")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","RECORD_NO","MinWidth","30")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_BO","MinWidth","70")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","WEIGHT","MinWidth","70")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DATE_ITEM_PROM","MinWidth","70")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_ONHAND","MinWidth","70")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CITY_SHIP","MinWidth","95")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","SHIP_VIA_SHIP","MinWidth","120")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CARRIER_CD","MinWidth","40")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","STAGED","MinWidth","45")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","MinWidth","60")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","MinWidth","60")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LASTNOTE","MinWidth","200")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_1","MinWidth","200")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_2","MinWidth","200")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_3","MinWidth","200")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_4","MinWidth","200")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_5","MinWidth","200")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Job","MinWidth","120")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Length","MinWidth","85")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Width","MinWidth","85")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Thickness","MinWidth","85")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Part_Weight","MinWidth","85")
+	
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Length","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Width","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Thickness","AllowEdit",False)
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Part_Weight","AllowEdit",False)
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PART","CellForeColor","Blue")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORDER_NO","CellForeColor","Blue")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","QTY_ONHAND","CellForeColor","Blue")
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","RECORD_NO","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DATE_ITEM_PROM","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LOCATION","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PRODUCT_LINE","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORDER_NO","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CARRIER_CD","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","STAGED","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Job","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Length","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Width","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Thickness","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Part_Weight","HeaderHAlignment","Center")
+	
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","RECORD_NO","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DATE_ITEM_PROM","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","LOCATION","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PRODUCT_LINE","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","ORDER_NO","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","CARRIER_CD","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","STAGED","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","CellHAlignment","Center")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Job","CellHAlignment","Center")
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","CellBackColor","Gray")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","CellBackColor","Gray")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","CellBackColor","Gray")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","PickLs","CellForeColor","White")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","FLAG_USE_MQD","CellForeColor","White")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","NOTES","CellForeColor","White")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_1","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_2","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_3","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_4","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","USER_5","CellBackColor","LightYellow")
+	
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Length","DisplayCustomNumeric","#,###,##0.00")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Width","DisplayCustomNumeric","#,###,##0.00")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Thickness","DisplayCustomNumeric","#,###,##0.00")
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","Part_Weight","DisplayCustomNumeric","#,###,##0.0000")
+
+	Gui.frmShip.GsGCAllShip.SetColumnProperty("gvAllShip","DATE_ITEM_PROM","DisplayCustomDatetime","d")
+	
+	Gui.frmShip.GsGCAllShip.AddStyleFormatCondition("gvAllShip","QTY_ALLOC","ParentLightGreen","Expression","[QTY_ALLOC] >= [QTY_BO] AND [QTY_ALLOC] > 0 And [SHP_HLD_FLAG] <> TRUE")
+	Gui.frmShip.GsGCAllShip.SetStyleFormatConditionProperty("gvAllShip","QTY_ALLOC","ParentLightGreen","BackColor","LightGreen")
+	Gui.frmShip.GsGCAllShip.SetStyleFormatConditionProperty("gvAllShip","QTY_ALLOC","ParentLightGreen","ApplyToRow",True)
+
+	Gui.frmShip.GsGCAllShip.AddStyleFormatCondition("gvAllShip","SHP_HLD_FLAG","ParentPink","Equal","True")
+	Gui.frmShip.GsGCAllShip.SetStyleFormatConditionProperty("gvAllShip","SHP_HLD_FLAG","ParentPink","BackColor","Pink")
+	Gui.frmShip.GsGCAllShip.SetStyleFormatConditionProperty("gvAllShip","SHP_HLD_FLAG","ParentPink","ApplyToRow",True)
+
+'	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtAllShip.RowCount--,1)
+'		f.Intrinsic.Control.If(V.DataTable.dtAllShip(v.Local.iCnt).QTY_ONHAND!fieldValFloat,>=,V.DataTable.dtAllShip(v.Local.iCnt).QTY_BO!FieldValFloat)
+'			Gui.frmShip.GsGCAllShip.setRowAppearance("gvAllShip",v.Local.iCnt,"BackColor","LightGreen")
+'		f.Intrinsic.Control.EndIf
+
+'		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","SHP_HLD_FLAG",v.Local.iCnt,V.Local.bHold)
+'		f.Intrinsic.Control.If(V.Local.bHold)
+'			Gui.frmShip.GsGCAllShip.SetRowAppearance("gvAllShip",V.Local.iCnt,"BackColor","Pink")
+'		f.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	Gui.frmShip.GsGCAllShip.ResumeLayout()
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDVGVAllShip.End
+
+Program.Sub.GsGCAllShip_RowCellClick.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.pSHP.Declare(String)
+	V.Local.lSHP.Declare(String)
+	V.Local.call.Declare(String)
+	V.Local.sTemp.Declare(String)
+	V.Local.sTempLine.Declare
+	V.Local.bStaged.Declare
+	V.Local.sCaption.Declare
+	V.Local.sOrderNo.Declare
+	V.Local.sOrderLine.Declare
+
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		F.Intrinsic.Control.Case("PART")
+			F.Intrinsic.Control.If(V.Screen.frmShip!optView.Value,=,True)
+				F.Intrinsic.Control.CallSub(disablecontrols)
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","PART",V.Args.RowIndex,V.Local.pSHP)
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+				F.Intrinsic.String.Concat(V.Local.pSHP,"!*!",V.Local.lSHP,"!*!","W",V.Local.call)
+				F.Global.General.CallWrappersync(300011,v.Local.call)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.CallSub(disablecontrols)
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","PART",V.Args.RowIndex,V.Local.pSHP)
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+				F.Intrinsic.String.Concat(V.Local.pSHP,"!*!",V.Local.lSHP,"!*!","W",V.Local.call)
+				F.Global.General.CallWrappersync(300011,v.Local.call)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+			F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.Control.Case("ORDER_NO")
+'			F.Intrinsic.Control.CallSub(disablecontrols)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.pSHP)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrderNo)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Local.sOrderLine)
+			F.Intrinsic.Control.If(V.Screen.frmShip!optShip.Value,=,True)
+				F.Global.General.CallWrapperSync(4010,v.Local.pSHP)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+				f.Intrinsic.Control.CallSub(cmdrefresh_click)
+'				Gui.frmShip.GsGCAllShip.Enabled(False)
+'				F.Global.Callwrapper.New("Ship","Sales.NewShipments")
+'				F.Global.Callwrapper.SetProperty("Ship","OrderNumber",V.Local.sOrderNo)
+'				F.Global.Callwrapper.SetProperty("Ship","OrderLine",V.Local.sOrderLine)
+'				F.Global.CallWrapper.Run("Ship")
+'				Gui.frmShip.GsGCAllShip.Enabled(True)
+			F.Intrinsic.Control.ElseIf(V.Screen.frmShip!optView.Value,=,"True")
+				F.Intrinsic.String.Concat(v.Local.sOrderNo,"!*!","V","!*!","*!*ZDR*!*",v.Local.sParams)
+				F.Global.General.CallWrapperSync(200000,V.Local.sParams)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.ExitSub
+	
+		F.Intrinsic.Control.Case("FLAG_USE_MQD")
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","FLAG_USE_MQD",V.Args.RowIndex,v.Local.pSHP)
+			F.Intrinsic.Control.If(V.Local.pSHP,=,"Ship Schd")
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.lSHP)
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",v.Args.RowIndex,v.Local.call)
+				Gui.frmShipSch.txtOrder.Text(V.Local.lSHP)
+				Gui.frmShipSch.txtOrdLn.Text(V.Local.call)
+				F.Intrinsic.Control.CallSub("subGridLoad_fgShipSch")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.ExitSub
+			
+		F.Intrinsic.Control.Case("NOTES")
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Global.sOrderNo)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Global.sOrderLn)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","NAME_CUSTOMER",V.Args.RowIndex,V.Global.sCustomer)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","SALESPERSON",V.Args.RowIndex,V.Global.sSalesperson)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","CUSTOMER_PO",V.Args.RowIndex,V.Global.sCustPO)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","PART",V.Args.RowIndex,V.Global.sPart)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","DESCRIPTION",V.Args.RowIndex,V.Global.sPaerDesc)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","QTY_BO",V.Args.RowIndex,V.Global.fQty)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","DATE_ITEM_PROM",V.Args.RowIndex,V.Global.dDueDate)
+			F.Intrinsic.String.RPad(V.Global.sOrderLn,"0",4,V.Global.sOrderLn)
+			F.Intrinsic.String.Build("Notes: {0}-{1}",V.Global.sOrderNo,V.Global.sOrderLn,V.Local.sCaption)
+			Gui.frmNotes..Caption(V.Local.sCaption)
+			F.Intrinsic.Control.CallSub(LoadDtNotes)
+			F.Intrinsic.Control.ExitSub
+	
+		F.Intrinsic.Control.Case("QTY_ONHAND")
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","PART",V.Args.RowIndex,V.Local.pSHP)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","DESCRIPTION",V.Args.RowIndex,V.Local.call)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","QTY_ONHAND",V.Args.RowIndex,V.Local.sTemp)
+			F.Intrinsic.Control.CallSub("subGridLoad_fgItem","Part",V.Local.pSHP,"Loc",V.Local.lSHP,"Desc",V.Local.call,"OnHand",V.Local.sTemp)
+			F.Intrinsic.Control.ExitSub
+	
+		F.Intrinsic.Control.Case("PickLs")
+			F.Intrinsic.Control.If(V.Global.bShip)
+				Gui.frmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","PickLs",V.Args.RowIndex,"RePrint")
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sTemp)
+				Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","FLAG_USE_MQD",V.Args.RowIndex,V.Local.pSHP)
+				F.Intrinsic.Control.CallSub(subPrint_PickList,"OrderNo",V.Local.sTemp,"ShipSchd",V.Local.pSHP)
+				F.Intrinsic.Control.CallSub(updateprintflag,"Order",V.Local.sTemp)
+			F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.Control.Case("STAGED")
+			F.Intrinsic.Control.If(V.Screen.frmShip!optShip.Value,=,True)
+				F.Intrinsic.Control.AndIf(V.Args.CellValue,=,True)
+	'			Gui.frmShip.tabShip.SetTab(2)
+				F.Global.General.CallWrapperSync(50,"SHP700/O")
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCAllShip_RowCellClick.End
+
+Program.Sub.GsGCAllShip_CellValueChanged.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+V.Local.sSQL.Declare
+V.Local.sOrder.Declare
+V.Local.sSOLine.Declare
+V.Local.sLine.Declare
+V.Local.sText.Declare
+V.Local.sTextTbl.Declare
+
+F.Intrinsic.Control.SelectCase(V.Args.column)
+'	F.Intrinsic.Control.Case("NOTES")
+'		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+'		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+'		F.Intrinsic.String.Replace(V.Args.Value,"'","''",V.Local.sTextTbl)
+'		F.Intrinsic.String.Build("SELECT * FROM GAB_4167_SO_NOTES WHERE SO = '{0}' AND SOLINE = '{1}';",V.Local.sOrder,V.Local.sLine,V.Local.sSQL)
+'		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+'		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+'			F.Intrinsic.String.Build("INSERT INTO GAB_4167_SO_NOTES(SO,SOLINE,NOTES) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sLine,V.Local.sTextTbl,V.Local.sSQL)
+'			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.String.Build("UPDATE GAB_4167_SO_NOTES SET NOTES = '{0}' WHERE SO = '{1}' AND SOLINE = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sLine,V.Local.sSQL)
+'			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'		F.Intrinsic.Control.EndIf
+'		F.ODBC.con!rstNotes.Close
+'		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Args.Value,"GV","gvAllShip","SO_Note","NOTES")
+
+	F.Intrinsic.Control.Case("USER_1")
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine,"0",4,V.Local.sSOLine)
+		F.Intrinsic.String.Left(V.Args.Value,30,V.Local.sText)
+		F.Intrinsic.String.Replace(V.Local.sText,"'","''",V.Local.sTextTbl)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}';",V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO ORDER_LINES(ORDER_NO,RECORD_NO,USER_1) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sSOLine,V.Local.sTextTbl,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("UPDATE ORDER_LINES SET USER_1 = '{0}' WHERE ORDER_NO = '{1}' AND RECORD_NO = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Local.sText,"GV","gvAllShip","SO_Note","USER_1")
+
+	F.Intrinsic.Control.Case("USER_2")
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine,"0",4,V.Local.sSOLine)
+		F.Intrinsic.String.Left(V.Args.Value,30,V.Local.sText)
+		F.Intrinsic.String.Replace(V.Local.sText,"'","''",V.Local.sTextTbl)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}';",V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO ORDER_LINES(ORDER_NO,RECORD_NO,USER_2) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sSOLine,V.Local.sTextTbl,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("UPDATE ORDER_LINES SET USER_2 = '{0}' WHERE ORDER_NO = '{1}' AND RECORD_NO = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Local.sText,"GV","gvAllShip","SO_Note","USER_2")
+		
+	F.Intrinsic.Control.Case("USER_3")
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine,"0",4,V.Local.sSOLine)
+		F.Intrinsic.String.Left(V.Args.Value,30,V.Local.sText)
+		F.Intrinsic.String.Replace(V.Local.sText,"'","''",V.Local.sTextTbl)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}';",V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO ORDER_LINES(ORDER_NO,RECORD_NO,USER_3) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sSOLine,V.Local.sTextTbl,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("UPDATE ORDER_LINES SET USER_3 = '{0}' WHERE ORDER_NO = '{1}' AND RECORD_NO = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Local.sText,"GV","gvAllShip","SO_Note","USER_3")
+		
+	F.Intrinsic.Control.Case("USER_4")
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine,"0",4,V.Local.sSOLine)
+		F.Intrinsic.String.Left(V.Args.Value,30,V.Local.sText)
+		F.Intrinsic.String.Replace(V.Local.sText,"'","''",V.Local.sTextTbl)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}';",V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO ORDER_LINES(ORDER_NO,RECORD_NO,USER_4) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sSOLine,V.Local.sTextTbl,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("UPDATE ORDER_LINES SET USER_4 = '{0}' WHERE ORDER_NO = '{1}' AND RECORD_NO = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Local.sText,"GV","gvAllShip","SO_Note","USER_4")
+		
+	F.Intrinsic.Control.Case("USER_5")
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine,"0",4,V.Local.sSOLine)
+		F.Intrinsic.String.Left(V.Args.Value,30,V.Local.sText)
+		F.Intrinsic.String.Replace(V.Local.sText,"'","''",V.Local.sTextTbl)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}';",V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO ORDER_LINES(ORDER_NO,RECORD_NO,USER_5) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sSOLine,V.Local.sTextTbl,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("UPDATE ORDER_LINES SET USER_5 = '{0}' WHERE ORDER_NO = '{1}' AND RECORD_NO = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Local.sText,"GV","gvAllShip","SO_Note","USER_5")
+		
+F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCAllShip_CellValueChanged.End
+
+Program.Sub.loadDTDueShip.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sFilter.Declare
+	
+	F.Intrinsic.Control.If(V.DataTable.dtDueShip.Exists)
+		F.Data.DataTable.Close("dtDueShip")
+		Gui.frmShip.GsGCDue.ClearGrouping("gvDueShip")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("DATE_ITEM_PROM <= #{0}#",V.Ambient.Date.FormatMM/DD/YYYY,V.Local.sFilter)
+	F.Data.DataView.Create("dtAllShip","dvDueShip",22,V.Local.sFilter,"")
+	F.Data.DataView.ToDataTable("dtAllShip","dvDueShip","dtDueShip",True)
+
+	F.Intrinsic.Control.CallSub(loaddvgvdueship)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDTDueShip.End
+
+Program.Sub.loadDVGVDueShip.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	V.Local.bHold.Declare
+
+	Gui.frmShip.GsGCDue.AddGridViewFromDataTable("gvDueShip","dtDueShip")
+	Gui.frmShip.GsGCDue.MainView("gvDueShip")
+	Gui.frmShip.GsGCDue.SuspendLayout()
+	Gui.frmShip.GsGCDue.SetGridViewProperty("gvDueShip","MultiSelect",True)
+	Gui.frmShip.GsGCDue.SetGridViewProperty("gvDueShip","OptionBehaviorEditable",True)
+	Gui.frmShip.GsGCDue.SetGridViewProperty("gvDueShip","AllowSort",True)
+	Gui.frmShip.GsGCDue.SetGridViewProperty("gvDueShip","AllowFilter",True)
+	Gui.frmShip.GsGCDue.SetGridViewProperty("gvDueShip","OptionsDetailShowDetailTabs",False)
+	Gui.frmShip.GsGCDue.SetGridViewProperty("gvDueShip","OptionsViewShowGroupPanel",True)
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","VisibleIndex","0")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","ShowCaption",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","ShowCaption",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","ShowCaption",False)
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","SHIP_ID","Visible",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CUSTOMER","Visible",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_SHIPPED","Visible",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","SHP_HLD_FLAG","Visible",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","ORDREC","Visible",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","SALESPERSON","Visible",False)
+	
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CODE_SORT","ReadOnly",True)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_1","ReadOnly",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_2","ReadOnly",True)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_3","ReadOnly",True)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_4","ReadOnly",True)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_5","ReadOnly",True)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","Job","ReadOnly",True)
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NAME_CUSTOMER","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CUSTOMER_PO","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PRODUCT_LINE","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LOCATION","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PART","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DESCRIPTION","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","ORDER_NO","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","RECORD_NO","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_BO","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","WEIGHT","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DATE_ITEM_PROM","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_ONHAND","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CITY_SHIP","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","SHIP_VIA_SHIP","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CARRIER_CD","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","STAGED","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LASTNOTE","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_1","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_2","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_3","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_4","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_5","AllowEdit",False)
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","Job","AllowEdit",False)
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","Caption","PickLs")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NAME_CUSTOMER","Caption","Customer Name")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CUSTOMER_PO","Caption","Customer PO")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PRODUCT_LINE","Caption","PL")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LOCATION","Caption","Loc")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PART","Caption","Part Number")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CODE_SORT","Caption","Line No.")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DESCRIPTION","Caption","Part Description")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","ORDER_NO","Caption","Order #")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","RECORD_NO","Caption","Ln")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_BO","Caption","Open Qty")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","WEIGHT","Caption","Tot. Weight")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DATE_ITEM_PROM","Caption","Ship Date")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_ONHAND","Caption","Qty On Hand")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CITY_SHIP","Caption","Ship City")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","SHIP_VIA_SHIP","Caption","Ship Via")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CARRIER_CD","Caption","Carrier")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","STAGED","Caption","Staged ")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","Caption","Ship Schd")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","Caption","Notes")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LASTNOTE","Caption","Last Note")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_1","Caption","USER FIELD 1 (30 Characters)")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_2","Caption","USER FIELD 2 (30 Characters)")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_3","Caption","USER FIELD 3 (30 Characters)")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_4","Caption","USER FIELD 4 (30 Characters)")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_5","Caption","USER FIELD 5 (30 Characters)")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","Job","Caption","Job")
+	
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","MinWidth","45")	
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NAME_CUSTOMER","MinWidth","175")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CUSTOMER_PO","MinWidth","100")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PRODUCT_LINE","MinWidth","25")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LOCATION","MinWidth","30")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PART","MinWidth","150")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DESCRIPTION","MinWidth","200")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DESCRIPTION","MaxWidth","250")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CODE_SORT","MinWidth","100")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CODE_SORT","MaxWidth","100")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","ORDER_NO","MinWidth","50")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","RECORD_NO","MinWidth","30")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_BO","MinWidth","70")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","WEIGHT","MinWidth","70")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DATE_ITEM_PROM","MinWidth","70")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_ONHAND","MinWidth","70")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CITY_SHIP","MinWidth","95")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","SHIP_VIA_SHIP","MinWidth","120")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CARRIER_CD","MinWidth","40")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","STAGED","MinWidth","45")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","MinWidth","60")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","MinWidth","60")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LASTNOTE","MinWidth","200")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_1","MinWidth","200")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_2","MinWidth","200")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_3","MinWidth","200")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_4","MinWidth","200")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_5","MinWidth","200")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","Job","MinWidth","120")
+	
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PART","CellForeColor","Blue")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","ORDER_NO","CellForeColor","Blue")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","QTY_ONHAND","CellForeColor","Blue")
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","RECORD_NO","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DATE_ITEM_PROM","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LOCATION","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PRODUCT_LINE","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","ORDER_NO","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CARRIER_CD","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","STAGED","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","HeaderHAlignment","Center")
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","RECORD_NO","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DATE_ITEM_PROM","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","LOCATION","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PRODUCT_LINE","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","ORDER_NO","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","CARRIER_CD","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","STAGED","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","CellHAlignment","Center")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","Job","CellHAlignment","Center")
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","CellBackColor","Gray")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","CellBackColor","Gray")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","CellBackColor","Gray")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","PickLs","CellForeColor","White")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","FLAG_USE_MQD","CellForeColor","White")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","NOTES","CellForeColor","White")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_1","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_2","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_3","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_4","CellBackColor","LightYellow")
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","USER_5","CellBackColor","LightYellow")
+
+	Gui.frmShip.GsGCDue.SetColumnProperty("gvDueShip","DATE_ITEM_PROM","DisplayCustomDatetime","d")
+
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtDueShip.RowCount--,1)
+		F.Intrinsic.Control.If(v.DataTable.dtDueShip(v.Local.iCnt).QTY_BO!fieldValFloat,=<,v.DataTable.dtDueShip(v.Local.iCnt).Qty_ONHAND!fieldValFloat)
+			Gui.frmShip.GsGCDue.SetRowAppearance("gvDueShip",V.Local.iCnt,"BackColor","LightGreen")
+		F.Intrinsic.Control.EndIf
+		
+		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","SHP_HLD_FLAG",v.Local.iCnt,V.Local.bHold)
+		F.Intrinsic.Control.If(V.Local.bHold)
+			Gui.frmShip.GsGCDue.SetRowAppearance("gvDueShip",V.Local.iCnt,"BackColor","Pink")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	Gui.frmShip.GsGCDue.ResumeLayout()
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDVGVDueShip.End
+
+Program.Sub.GsGCDue_RowCellClick.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.pSHP.Declare(String)
+	V.Local.lSHP.Declare(String)
+	V.Local.call.Declare(String)
+	V.Local.sTemp.Declare(String)
+	v.Local.sTempLine.Declare
+	V.Local.sCaption.Declare
+
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		F.Intrinsic.Control.Case("PART")
+			F.Intrinsic.Control.If(V.Screen.frmShip!optView.Value,=,True)
+				F.Intrinsic.Control.CallSub(disablecontrols)
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","PART",V.Args.RowIndex,V.Local.pSHP)
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+				F.Intrinsic.String.Concat(V.Local.pSHP,"!*!",V.Local.lSHP,"!*!","W",V.Local.call)
+				F.Global.General.CallWrappersync(300011,v.Local.call)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+			F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(disablecontrols)
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","PART",V.Args.RowIndex,V.Local.pSHP)
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+				F.Intrinsic.String.Concat(V.Local.pSHP,"!*!",V.Local.lSHP,"!*!","W",V.Local.call)
+				F.Global.General.CallWrappersync(300011,v.Local.call)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+			F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.Control.Case("ORDER_NO")
+'			F.Intrinsic.Control.CallSub(disablecontrols)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Args.RowIndex,V.Local.pSHP)
+			F.Intrinsic.Control.If(V.Screen.frmShip!optShip.Value,=,"True")
+				F.Global.General.CallWrapperSync(4010,v.Local.pSHP)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+			F.Intrinsic.Control.ElseIf(V.Screen.frmShip!optView.Value,=,"True")
+				F.Intrinsic.String.Concat(v.Local.pSHP,"!*!","V","!*!","*!*ZDR*!*",v.Local.call)
+				F.Global.General.CallWrapperSync(200000,V.Local.call)
+				F.Intrinsic.Control.CallSub(enablecontrols)
+				F.Intrinsic.Control.CallSub(cmdrefresh_click)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.ExitSub
+	
+		F.Intrinsic.Control.Case("FLAG_USE_MQD")
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","FLAG_USE_MQD",V.Args.RowIndex,v.Local.pSHP)
+			F.Intrinsic.Control.If(V.Local.pSHP,=,"Ship Schd")
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Args.RowIndex,V.Local.lSHP)
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",v.Args.RowIndex,v.Local.call)
+				Gui.frmShipSch.txtOrder.Text(V.Local.lSHP)
+				Gui.frmShipSch.txtOrdLn.Text(V.Local.call)
+				F.Intrinsic.Control.CallSub("subGridLoad_fgShipSch")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.ExitSub
+			
+		F.Intrinsic.Control.Case("NOTES")
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Args.RowIndex,V.Global.sOrderNo)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Args.RowIndex,V.Global.sOrderLn)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","NAME_CUSTOMER",V.Args.RowIndex,V.Global.sCustomer)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","SALESPERSON",V.Args.RowIndex,V.Global.sSalesperson)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","CUSTOMER_PO",V.Args.RowIndex,V.Global.sCustPO)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","PART",V.Args.RowIndex,V.Global.sPart)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","DESCRIPTION",V.Args.RowIndex,V.Global.sPaerDesc)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","QTY_BO",V.Args.RowIndex,V.Global.fQty)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","DATE_ITEM_PROM",V.Args.RowIndex,V.Global.dDueDate)
+			F.Intrinsic.String.RPad(V.Global.sOrderLn,"0",4,V.Global.sOrderLn)
+			F.Intrinsic.String.Build("Notes: {0}-{1}",V.Global.sOrderNo,V.Global.sOrderLn,V.Local.sCaption)
+			Gui.frmNotes..Caption(V.Local.sCaption)
+			F.Intrinsic.Control.CallSub(LoadDtNotes)
+			F.Intrinsic.Control.ExitSub
+	
+		F.Intrinsic.Control.Case("QTY_ONHAND")
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","PART",V.Args.RowIndex,v.Local.pSHP)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","LOCATION",V.Args.RowIndex,v.Local.lSHP)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","DESCRIPTION",V.Args.RowIndex,v.Local.call)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","QTY_ONHAND",V.Args.RowIndex,v.Local.sTemp)
+			F.Intrinsic.Control.CallSub("subGridLoad_fgItem","Part",V.Local.pSHP,"Loc",v.Local.lSHP,"Desc",V.Local.call,"OnHand",V.Local.sTemp)
+			F.Intrinsic.Control.ExitSub
+	
+		F.Intrinsic.Control.Case("PickLs")
+			F.Intrinsic.Control.If(V.Global.bShip)
+				Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","PickLs",V.Args.RowIndex,"RePrint")
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Args.RowIndex,v.Local.sTemp)
+				Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","FLAG_USE_MQD",V.Args.RowIndex,v.Local.pSHP)
+				F.Intrinsic.Control.CallSub(subPrint_PickList,"OrderNo",V.Local.sTemp,"ShipSchd",v.Local.pSHP)
+				F.Intrinsic.Control.CallSub(updateprintflag,"Order",v.Local.sTemp)
+			F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.Control.Case("STAGED")
+			F.Intrinsic.Control.If(V.Screen.frmShip!optShip.Value,=,True)
+				F.Intrinsic.Control.AndIf(V.Args.CellValue,=,True)
+	'			Gui.frmShip.tabShip.SetTab(2)
+				F.Global.General.CallWrapperSync(50,"SHP700/O")
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCDue_RowCellClick.End
+
+Program.Sub.GsGCDue_CellValueChanged.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+V.Local.sSQL.Declare
+V.Local.sOrder.Declare
+V.Local.sSOLine.Declare
+V.Local.sLine.Declare
+V.Local.sText.Declare
+V.Local.sTextTbl.Declare
+
+F.Intrinsic.Control.SelectCase(V.Args.column)
+'	F.Intrinsic.Control.Case("NOTES")
+'		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+'		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+'		F.Intrinsic.String.Replace(V.Args.Value,"'","''",V.Local.sTextTbl)
+'		F.Intrinsic.String.Build("SELECT * FROM GAB_4167_SO_NOTES WHERE SO = '{0}' AND SOLINE = '{1}';",V.Local.sOrder,V.Local.sLine,V.Local.sSQL)
+'		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+'		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+'			F.Intrinsic.String.Build("INSERT INTO GAB_4167_SO_NOTES(SO,SOLINE,NOTES) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sLine,V.Local.sTextTbl,V.Local.sSQL)
+'			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.String.Build("UPDATE GAB_4167_SO_NOTES SET NOTES = '{0}' WHERE SO = '{1}' AND SOLINE = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sLine,V.Local.sSQL)
+'			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'		F.Intrinsic.Control.EndIf
+'		F.ODBC.con!rstNotes.Close
+'		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Args.Value,"GV","gvDueShip","SO_Note","NOTES")
+
+	F.Intrinsic.Control.Case("USER_1")
+		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine,"0",4,V.Local.sSOLine)
+		F.Intrinsic.String.Left(V.Args.Value,30,V.Local.sText)
+		F.Intrinsic.String.Replace(V.Local.sText,"'","''",V.Local.sTextTbl)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}';",V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO ORDER_LINES(ORDER_NO,RECORD_NO,USER_1) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sSOLine,V.Local.sTextTbl,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("UPDATE ORDER_LINES SET USER_1 = '{0}' WHERE ORDER_NO = '{1}' AND RECORD_NO = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Local.sText,"GV","gvDueShip","SO_Note","USER_1")
+
+	F.Intrinsic.Control.Case("USER_4")
+		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Args.RowIndex,V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine,"0",4,V.Local.sSOLine)
+		F.Intrinsic.String.Left(V.Args.Value,30,V.Local.sText)
+		F.Intrinsic.String.Replace(V.Local.sText,"'","''",V.Local.sTextTbl)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}';",V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO ORDER_LINES(ORDER_NO,RECORD_NO,USER_4) VALUES('{0}','{1}','{2}');",V.Local.sOrder,V.Local.sSOLine,V.Local.sTextTbl,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("UPDATE ORDER_LINES SET USER_4 = '{0}' WHERE ORDER_NO = '{1}' AND RECORD_NO = '{2}';",V.Local.sTextTbl,V.Local.sOrder,V.Local.sSOLine,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.CallSub(checknote,"SO",V.Local.sOrder,"Line",V.Local.sLine,"Note",V.Local.sText,"GV","gvDueShip","SO_Note","USER_4")
+F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCDue_CellValueChanged.End
+
+Program.Sub.subGridLoad_fgShipSch.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSql.Declare(String)
+
+	F.Intrinsic.Control.If(V.DataTable.dtShipSched.Exists,=,True)
+		F.Data.DataTable.Close("dtShipSched")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("Select ORDER_NO,ORDER_LINE,DATE_DUE,QTY_SCHED,QTY_OPEN,FLAG_CLOSED,INFO FROM V_OE_SHIP_SCHED WHERE ORDER_NO='{0}' AND ORDER_LINE='{1}0'",V.Screen.frmShipSch!txtOrder.Text,V.Screen.frmShipSch!txtOrdLn.Text,V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("dtShipSched","con",v.Local.sSql,true)
+
+	F.Intrinsic.Control.If(V.DataView.dtShipSched!dvShipSched.Exists,=,True)
+		F.Data.DataView.Close("dtShipSched","dvShipSched")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Create("dtShipSched","dvShipSched")
+
+	Gui.frmShipSch.GSGCShipSch.AddGridViewFromDataTable("gvShipSched","dtShipSched")
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","MultiSelect",True)
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","OptionBehaviorEditable",False)
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","ReadOnly",True)
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","AllowSort",True)
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","AllowFilter",True)
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","OptionsDetailShowDetailTabs",False)
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","OptionsViewShowGroupPanel",True)
+	Gui.frmShipSch.GSGCShipSch.SetGridViewProperty("gvShipSched","AllowColumnMoving",False)
+	'Set Column Properties
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","ORDER_NO","Visible",False)
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","ORDER_LINE","Visible",False)
+	
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","ORDER_NO","Caption","Order #")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","ORDER_LINE","Caption","Line")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","DATE_DUE","Caption","Date Due")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_SCHED","Caption","Qty Scheduled")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_OPEN","Caption","Qty Open")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","FLAG_CLOSED","Caption","Closed")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","INFO","Caption","Info")
+
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","ORDER_NO","MinWidth","50")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","ORDER_LINE","MinWidth","15")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","DATE_DUE","MinWidth","60")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_SCHED","MinWidth","70")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_OPEN","MinWidth","70")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","FLAG_CLOSED","MinWidth","30")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","INFO","MinWidth","120")
+
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","DATE_DUE","DisplayCustomDatetime","d")
+
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","DATE_DUE","HeaderHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_SCHED","HeaderHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_OPEN","HeaderHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","FLAG_CLOSED","HeaderHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","INFO","HeaderHAlignment","Center")
+	
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","DATE_DUE","CellHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_SCHED","CellHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","QTY_OPEN","CellHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","FLAG_CLOSED","CellHAlignment","Center")
+	Gui.frmShipSch.GSGCShipSch.setColumnProperty("gvShipSched","INFO","CellHAlignment","Center")
+
+	Gui.frmShipSch.GSGCShipSch.MainView("gvShipSched")
+
+	Gui.frmShipSch..Show
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.subGridLoad_fgShipSch.End
+
+Program.Sub.frmShipSch_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmShipSch..Visible(False)
+	Gui.frmShip..Visible(True)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmShipSch_UnLoad.End
+
+Program.Sub.subGridLoad_fgItem.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSql.Declare
+
+	Gui.frmItem.txtItemPart.Text(V.Args.Part)
+	Gui.frmItem.txtItemLoc.Text(V.Args.Loc)
+	Gui.frmItem.txtInvOnHand.Text(V.Args.OnHand)
+	Gui.frmItem.txtItemDesc.Text(v.Args.Desc)
+
+	F.Intrinsic.Control.If(V.DataTable.dtItem.Exists,=,True)
+			F.Data.DataTable.Close("dtItem")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("Select LOT, HEAT, BIN, SERIAL_NUMBER, QUANTITY, QTY_AVAILABLE_SHIP From V_ITEM_MASTER WHERE PART='{0}' AND LOCATION='{1}'",V.Args.Part.TRIM,V.Args.Loc.TRIM,V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("dtItem","con",v.Local.sSql,True)
+
+	F.Intrinsic.Control.If(V.DataView.dtItem!dvItem.Exists,=,True)
+		F.Data.DataView.Close("dtItem","dvItem")
+	F.Intrinsic.Control.EndIf
+
+	'Create DataView
+	F.Data.DataView.Create("dtItem","dvItem")
+
+	Gui.frmItem.GsGCItem.AddGridViewFromDataTable("gvItem","dtItem")
+
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","MultiSelect",True)
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","OptionBehaviorEditable",False)
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","ReadOnly",True)
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","AllowSort",True)
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","AllowFilter",True)
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","OptionsDetailShowDetailTabs",False)
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","OptionsViewShowGroupPanel",True)
+	Gui.frmItem.GsGCItem.SetGridViewProperty("gvItem","AllowColumnMoving",False)
+
+	'Set Column Properties	
+	Gui.frmItem.GsGCItem.SetColumnProperty("gvItem","LOT","Caption","Lot")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","LOT","MinWidth","50")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","HEAT","Caption","Heat")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","BIN","Caption","Bin")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","SERIAL_NUMBER","Caption","Serial Number")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","QUANTITY","Caption","Quantity")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","QTY_AVAILABLE_SHIP","Caption","Available")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","HEAT","MinWidth","50")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","BIN","MinWidth","50")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","SERIAL_NUMBER","MinWidth","50")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","QUANTITY","MinWidth","50")
+	Gui.frmItem.GSGCItem.setColumnProperty("gvItem","QTY_AVAILABLE_SHIP","MinWidth","50")
+	Gui.frmItem.GSGCItem.MainView("gvItem")
+
+	Gui.frmItem..Show
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.subGridLoad_fgItem.End
+
+Program.Sub.frmItem_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmItem..Visible(False)
+	Gui.frmShip..Visible(True)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmItem_UnLoad.End
+
+Program.Sub.subPrint_PickList.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sName.Declare(String)
+	V.Local.sValue.Declare(String)
+	V.Local.sRepName.Declare(String)
+	V.Local.sRepName.Set("GCG_5145_ShippingDashPicklist.rpt")
+	V.Local.iRepID.Declare
+
+	F.Intrinsic.String.Split("OrderNo","*!*",V.Local.sName)
+	F.Intrinsic.String.Split(V.Args.OrderNo,"*!*",V.Local.sValue)
+
+	F.Global.BI.GetIDFromName(V.Local.sRepName,V.Local.iRepID)
+
+'	F.Intrinsic.Control.If(V.Args.ShipSchd,=,"Ship Schd")
+'		F.Intrinsic.Control.If(V.Local.sRep,<,0)
+'			F.Intrinsic.UI.Msgbox("ShippingDashPicklist.rpt is not set in your system","Report not found")
+'			F.Intrinsic.Control.ExitSub
+'		F.Intrinsic.Control.Else
+'			F.Global.BI.PrintReport(V.Local.sRep,0,V.Local.sName,V.Local.sValue,False)
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Else
+'		F.Intrinsic.String.Concat(V.Local.sValue,"!*!",V.Local.sValue,"!*!","N","!*!","*!*ZDR*!*","!*!","*!*ZDR*!*","!*!","Y",V.Local.sValue)
+'		F.Global.General.CallWrapperSync(910200,V.Local.sValue)
+'	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iRepID,<,0)
+		F.Intrinsic.String.Concat(V.Local.sValue,"!*!",V.Local.sValue,"!*!","N","!*!","*!*ZDR*!*","!*!","*!*ZDR*!*","!*!","Y",V.Local.sValue)
+		F.Global.General.CallWrapperSync(910200,V.Local.sValue)
+	F.Intrinsic.Control.Else
+		F.Global.BI.PrintReport(V.Local.iRepID,0,V.Local.sName,V.Local.sValue,False)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.subPrint_PickList.End
+
+Program.Sub.loadDTStaging.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+F.Intrinsic.Control.If(V.DataTable.dtStaging.Exists,=,True)
+	F.Data.DataTable.Close("dtStaging")
+	Gui.frmShip.GsGCStaging.ClearGrouping("gvStaging")
+F.Intrinsic.Control.EndIf
+
+v.Local.sSQL.Declare(string,"SELECT VCM.NAME_CUSTOMER,CAST(VSO.PCK_NO AS NUMERIC(7,0)) AS PCK_NO,VSO.ORDER_NO,VOH.CUSTOMER_PO,VSH.SHP_DATE,CASE WHEN VOH.SHP_HLD_FLAG = 02 OR VOH.SHP_HLD_FLAG = 04 THEN CONVERT(1,SQL_BIT) ELSE CONVERT(0,SQL_BIT) END AS SHP_HLD_FLAG FROM V_STAGING_ORDERS VSO LEFT JOIN V_STAGING_HEADER VSH ON VSO.PCK_NO = VSH.PCK_NO LEFT JOIN ORDER_HEADER VOH ON VSO.ORDER_NO = VOH.ORDER_NO LEFT JOIN V_CUSTOMER_MASTER VCM ON VOH.CUSTOMER = VCM.CUSTOMER WHERE VOH.RECORD_NO = '  A' ORDER BY VSO.PCK_NO;")
+F.Data.DataTable.CreateFromSQL("dtStaging","con",v.Local.sSQL,true)
+
+F.Intrinsic.Control.CallSub(loadDVGVStaging)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDTStaging.End
+Program.Sub.loadDVGVStaging.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	v.Local.rowCount.Declare(long)
+	v.Local.hold.Declare(boolean)
+	v.Local.iRet.Declare(long)
+	v.Local.iCnt.Declare(long)
+
+	Gui.frmShip.GsGCStaging.AddGridviewFromDatatable("gvStaging","dtStaging")
+	Gui.frmShip.GsGCStaging.MainView("gvStaging")
+	Gui.frmShip.GsGCStaging.SuspendLayout()
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStaging","MultiSelect",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStaging","OptionBehaviorEditable",False)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStaging","ReadOnly",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStaging","AllowSort",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStaging","AllowFilter",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStaging","OptionsDetailShowDetailTabs",False)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStaging","OptionsViewShowGroupPanel",True)
+
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","NAME_CUSTOMER","Caption","Customer Name")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","PCK_NO","Caption","Packing List")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","ORDER_NO","Caption","Order #")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","CUSTOMER_PO","Caption","Customer PO")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_DATE","Caption","Ship Date")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_HLD_FLAG","Caption","Shipping Hold")
+
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","NAME_CUSTOMER","MINWIDTH","166")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","PCK_NO","MINWIDTH","64")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","ORDER_NO","MINWIDTH","50")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","CUSTOMER_PO","MINWIDTH","88")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_DATE","MINWIDTH","58")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_HLD_FLAG","MINWIDTH","75")
+
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","PCK_NO","CellForeColor","Blue")
+
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","PCK_NO","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","PCK_NO","CellHAlignment","Center")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","ORDER_NO","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","ORDER_NO","CellHAlignment","Center")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_DATE","HeaderHAlignment","Center")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_DATE","CellHAlignment","Center")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_HLD_FLAG","HeaderHAlignment","Center")
+
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStaging","SHP_DATE","DisplayCustomDatetime","d")
+
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtSTAGING.RowCount--,1)
+		f.Intrinsic.Math.Mod(v.Local.iCnt,2,v.Local.iRet)
+		Gui.frmShip.GsGCStaging.GetCellValueByColumnName("gvStaging","SHP_HLD_FLAG",v.Local.iCnt,v.Local.hold)
+		f.Intrinsic.Control.If(v.Local.iRet,=,0)
+		Gui.frmShip.GsGCStaging.SetRowAppearance("gvStaging",V.Local.iCnt,"BackColor","LightGray")
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.If(v.Local.hold,=,true)
+			Gui.frmShip.GsGCStaging.SetRowAppearance("gvSTAGING",V.Local.iCnt,"BackColor","pink")
+	f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	Gui.frmShip.GsGCStaging.ResumeLayout()
+
+	f.Intrinsic.Control.CallSub(loaddtstagexpand)
+
+	Gui.frmShip.lbl1.Visible(False)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDVGVStaging.End
+
+Program.Sub.loadDTStagExpand.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+F.Intrinsic.Control.If(V.DataTable.dtStaging$dtStagExpand.Exists,=,True)
+	F.Data.DataTable.Close("dtStaging$dtStagExpand")
+F.Intrinsic.Control.EndIf
+
+v.Local.sSQL.Declare(string,"Select CAST(VSQ.PCK_NO AS NUMERIC(7,0)) AS PCK_NO,VOL.ORDER_NO,VSQ.LINE,VSQ.PART,VSQ.LOC,VSL.QTY_ORDERED,VSL.QTY_SHIPPED,VSL.QTY_BO,VIM.QTY_ONHAND FROM V_STAGING_QUANTITY VSQ LEFT JOIN V_ORDER_LINES VOL LEFT JOIN V_SHIPMENT_LINES VSL ON VOL.ORDER_NO = VSL.ORDER_NO AND VOL.RECORD_NO = VSL.ORDER_REC LEFT JOIN V_INVENTORY_MSTR VIM ON VOL.PART = VIM.PART AND VOL.LOCATION = VIM.LOCATION ON VSQ.ORDER_NO = VOL.ORDER_NO AND VSQ.LINE = VOL.RECORD_NO AND (VSL.LAST_CHG_PGM='SHP700' OR VSL.LAST_CHG_PGM='WIR030') ORDER BY VSQ.LINE;")
+F.Data.DataTable.CreateFromSQL("dtStaging$dtStagExpand","con",v.Local.sSQL,true)
+
+f.Data.Datatable.AddRelation("dtStaging","PCK_NO*!*ORDER_NO","dtStaging$dtStagExpand","PCK_NO*!*ORDER_NO")
+
+F.Intrinsic.Control.CallSub(loadDVGVStagExpand)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDTStagExpand.End
+
+Program.Sub.loadDVGVStagExpand.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.DataView.dtStaging!dvStagExpand.Exists,=,True)
+		F.Data.DataView.Close("dtStaging$dtStagExpand","dvStagExpand")
+	F.Intrinsic.Control.EndIf
+
+	v.Local.iCnt.Declare(long)
+
+	'Create DataView
+	F.Data.DataView.Create("dtStaging$dtStagExpand","dvStagExpand")
+
+	Gui.frmShip.GsGCStaging.AddGridViewFromDataView("gvStagExpand","dtStaging","dvStagExpand")
+
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","MultiSelect",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","OptionBehaviorEditable",False)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","ReadOnly",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","AllowSort",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","AllowFilter",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","OptionsDetailShowDetailTabs",False)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","OptionsViewShowGroupPanel",True)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","AllowColumnMoving",False)
+	Gui.frmShip.GsGCStaging.SetGridViewProperty("gvStagExpand","EnableAppearanceOddRow",True)
+
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","PCK_NO","Visible",false)
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","ORDER_NO","Visible",false)
+
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","LINE","Caption","Line ")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","PART","Caption","Part ")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","LOC","Caption","Location")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_ORDERED","Caption","Order Qty")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_SHIPPED","Caption","Shipped Qty")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_BO","Caption","BO Qty")
+	Gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_ONHAND","Caption","OnHand Qty")
+
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","PART","MINWIDTH","112")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","LINE","MINWIDTH","35")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","LOC","MINWIDTH","137")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_ORDERED","MINWIDTH","88")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_SHIPPED","MINWIDTH","88")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_BO","MINWIDTH","88")
+	gui.frmShip.GsGCStaging.SetColumnProperty("gvStagExpand","QTY_ONHAND","MINWIDTH","88")
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDVGVStagExpand.End
+
+Program.Sub.GsGCStaging_RowCellClick.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sPackList.Declare
+
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		Function.Intrinsic.Control.Case("PCK_NO")
+			Gui.frmShip.GsGCStaging.GetCellValueByColumnName("gvStaging","PCK_NO",V.Args.RowIndex,V.Local.sPackList)
+			F.Intrinsic.Control.CallSub(disablecontrols)
+			F.Global.General.CallWrapperSync(50,"SHP700/O")
+			F.Intrinsic.Control.CallSub(enablecontrols)
+	Function.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCStaging_RowCellClick.End
+
+Program.Sub.loadDTShipped.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.DataTable.dtShipped.Exists,=,True)
+		F.Data.DataTable.Close("dtShipped")
+		Gui.frmShip.GsGridControlShipped.ClearGrouping("gvShipped")
+	F.Intrinsic.Control.EndIf
+
+	v.Local.sSQL.Declare(STRING,"SELECT a.ORDER_NO,a.ORDER_SUFFIX,b.code_sort, a.CUSTOMER,RTRIM(a.PART) as PART,a.location,a.ORDER_DESC,a.PCK_NO, a.DATE_SHIP, c.qty_onhand,a.QTY_SHIPPED, a.LN_SHP_STAT,D.CITY_SHIP FROM V_SHIPMENT_LINES a left join V_Order_header b on a.order_no = b.order_no left join V_INVENTORY_MSTR c ON a.PART = c.PART LEFT JOIN V_ORDER_SHIP_TO D ON A.ORDER_NO = D.ORDER_NO and A.SHIP_ID = D.ORDER_SHIP_ID where QTY_SHIPPED <> 0 AND LN_SHP_STAT <> 0 ORDER BY DATE_SHIP, a.ORDER_NO")
+
+	F.Data.DataTable.CreateFromSQL("dtShipped","con",v.Local.sSQL,true)
+	
+	'BP - add LWT and Weight
+	f.Data.Datatable.AddColumn("dtShipped","Length","Float")
+	f.Data.Datatable.AddColumn("dtShipped","Width","Float")
+	f.Data.Datatable.AddColumn("dtShipped","Thickness","Float")
+	f.Data.Datatable.AddColumn("dtShipped","Weight","Float")
+
+	f.Data.Datatable.FillFromDictionary("dtShipped","dLength","PART","Length")
+	f.Data.Datatable.FillFromDictionary("dtShipped","dWidth","PART","Width")
+	f.Data.Datatable.FillFromDictionary("dtShipped","dThickness","PART","Thickness")
+	
+	f.Data.Dictionary.Close("dLength")
+	f.Data.Dictionary.Close("dWidth")
+	f.Data.Dictionary.Close("dThickness")
+	
+	f.Data.Datatable.FillFromDictionary("dtShipped","dWeight","PART","Weight")
+	f.Data.Dictionary.Close("dWeight")
+	f.Data.Datatable.AddExpressionColumn("dtShipped","TOTAL_WEIGHT","Float","[QTY_SHIPPED] * [Weight]")
+	f.Intrinsic.Control.CallSub(loaddvgvshipped)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loadDTShipped.End
+
+Program.Sub.loaddvgvshipped.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	V.Local.hold.Declare(boolean)
+	V.Local.sRecords.Declare
+
+	Gui.frmShip.GsGridControlShipped.AddGridViewFromDataTable("gvShipped","dtShipped")
+	Gui.frmShip.GsGridControlShipped.MainView("gvShipped")
+	Gui.frmShip.GsGridControlShipped.SuspendLayout()
+	Gui.frmShip.GsGridControlShipped.SetGridViewProperty("gvShipped","MultiSelect",True)
+	Gui.frmShip.GsGridControlShipped.SetGridViewProperty("gvShipped","OptionBehaviorEditable",True)
+	Gui.frmShip.GsGridControlShipped.SetGridViewProperty("gvShipped","AllowSort",True)
+	Gui.frmShip.GsGridControlShipped.SetGridViewProperty("gvShipped","AllowFilter",True)
+	Gui.frmShip.GsGridControlShipped.SetGridViewProperty("gvShipped","OptionsDetailShowDetailTabs",False)
+	Gui.frmShip.GsGridControlShipped.SetGridViewProperty("gvShipped","OptionsViewShowGroupPanel",True)
+
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","LN_SHP_STAT","VISIBLE",False)
+
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_NO","CAPTION","Order No")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_SUFFIX","Caption","Suffix")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CUSTOMER","Caption","Customer")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","PART","Caption","Part #")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Location","Caption","Location")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_ONHAND","Caption","Qty On Hand")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CODE_SORT","Caption","Line No.")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_DESC","Caption","Description")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","PCK_NO","Caption","Packing No")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","DATE_SHIP","Caption","Date Shipped")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_SHIPPED","Caption","Qty in Shipment")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CITY_SHIP","Caption","Ship City")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","TOTAL_WEIGHT","Caption","Tot. Weight")
+	
+
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_NO","MinWidth","70")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_SUFFIX","MinWidth","43")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CODE_SORT","MinWidth","100")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CUSTOMER","MinWidth","72")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Location","MinWidth","43")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","PART","MinWidth","130")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_ONHAND","MinWidth","70")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_DESC","MinWidth","231")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","PCK_NO","MinWidth","69")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","DATE_SHIP","MinWidth","81")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_SHIPPED","MinWidth","101")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CODE_SORT","MinWidth","100")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CITY_SHIP","MinWidth","95")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Length","MinWidth","85")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Width","MinWidth","85")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Thickness","MinWidth","85")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Weight","MinWidth","85")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","TOTAL_WEIGHT","MinWidth","85")
+
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","PART","CellForeColor","Blue")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Qty_onhand","CellForeColor","Blue")
+	
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_NO","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_SUFFIX","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CUSTOMER","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","PART","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Location","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_ONHAND","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","ORDER_DESC","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","PCK_NO","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","DATE_SHIP","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_SHIPPED","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CODE_SORT","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","CITY_SHIP","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Length","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Width","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Thickness","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Weight","AllowEdit",False)
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","TOTAL_WEIGHT","AllowEdit",False)
+	
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Length","DisplayCustomNumeric","#,###,##0.00")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Width","DisplayCustomNumeric","#,###,##0.00")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Thickness","DisplayCustomNumeric","#,###,##0.00")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","Weight","DisplayCustomNumeric","#,###,##0.0000")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","TOTAL_WEIGHT","DisplayCustomNumeric","#,###,##0.0000")
+	
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_ONHAND","ReadOnly",True)
+
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_SHIPPED","HeaderHAlignment","Center")
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","QTY_SHIPPED","CellHAlignment","Center")
+
+	Gui.frmShip.GsGridControlShipped.SetColumnProperty("gvShipped","DATE_SHIP","DisplayCustomDatetime","d")
+	
+	F.Data.DataTable.Select("dtShipped","LN_SHP_STAT = 2",V.Local.sRecords)
+	F.Intrinsic.Control.If(V.Local.sRecords,<>,"***NORETURN***")
+		F.Intrinsic.String.Split(V.Local.sRecords,"*!*",V.Local.sRecords)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sRecords.UBound,1)
+			Gui.frmShip.GsGridControlShipped.SetRowAppearance("gvShipped",V.Local.sRecords(V.Local.iCnt),"BackColor","LightYellow")
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataTable.Select("dtShipped","LN_SHP_STAT = 3",V.Local.sRecords)
+	F.Intrinsic.Control.If(V.Local.sRecords,<>,"***NORETURN***")
+		F.Intrinsic.String.Split(V.Local.sRecords,"*!*",V.Local.sRecords)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sRecords.UBound,1)
+			Gui.frmShip.GsGridControlShipped.SetRowAppearance("gvShipped",V.Local.sRecords(V.Local.iCnt),"BackColor","LightGreen")
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Control.EndIf
+
+	Gui.frmShip.GsGridControlShipped.ResumeLayout()
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.loaddvgvshipped.End
+
+Program.Sub.CheckNote.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSO.Declare
+	V.Local.sLine.Declare
+	V.Local.iRows.Declare
+	V.Local.iCnt.Declare
+
+	F.Intrinsic.Control.If(V.Args.SO_Note,=,"NOTES")
+		Gui.frmShip.GsGCDue.GetRowCount("gvDueShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","NOTES",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		Gui.frmShip.GsGCAllShip.GetRowCount("gvAllShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","NOTES",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	F.Intrinsic.Control.ElseIf(V.Args.SO_Note,=,"USER_1")
+		Gui.frmShip.GsGCDue.GetRowCount("gvDueShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","USER_1",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		Gui.frmShip.GsGCAllShip.GetRowCount("gvAllShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","USER_1",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	F.Intrinsic.Control.ElseIf(V.Args.SO_Note,=,"USER_2")
+		Gui.frmShip.GsGCDue.GetRowCount("gvDueShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","USER_2",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		Gui.frmShip.GsGCAllShip.GetRowCount("gvAllShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","USER_2",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		
+	F.Intrinsic.Control.ElseIf(V.Args.SO_Note,=,"USER_3")
+		Gui.frmShip.GsGCDue.GetRowCount("gvDueShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","USER_3",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		Gui.frmShip.GsGCAllShip.GetRowCount("gvAllShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","USER_3",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		
+	F.Intrinsic.Control.ElseIf(V.Args.SO_Note,=,"USER_4")
+		Gui.frmShip.GsGCDue.GetRowCount("gvDueShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","USER_4",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		Gui.frmShip.GsGCAllShip.GetRowCount("gvAllShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","USER_4",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		
+	F.Intrinsic.Control.ElseIf(V.Args.SO_Note,=,"USER_5")
+		Gui.frmShip.GsGCDue.GetRowCount("gvDueShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","USER_5",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		Gui.frmShip.GsGCAllShip.GetRowCount("gvAllShip",V.Local.iRows)
+		F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Local.iCnt,V.Local.sSO)
+			Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","RECORD_NO",V.Local.iCnt,V.Local.sLine)
+			F.Intrinsic.Control.If(V.Local.sSO,=,V.Args.SO)
+			F.Intrinsic.Control.AndIf(V.Local.sLine,=,V.Args.Line)
+				Gui.frmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","USER_5",V.Local.iCnt,V.Args.Note)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+		
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.CheckNote.End
+
+Program.Sub.cmdExport_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+
+	F.Intrinsic.Control.SelectCase(V.Screen.frmShip!tabShip.Tab)
+		F.Intrinsic.Control.Case(0)
+			F.Intrinsic.Control.If(V.Local.bExcel)
+				F.Intrinsic.String.Build("{0}\GAB_5376_AllShips_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGCAllShip.Export(V.Local.sFileExport,"xlsx")
+					F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}\GAB_5376_AllShips_Export.csv",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGCAllShip.Export(V.Local.sFileExport,"csv")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.Case(1)
+			F.Intrinsic.Control.If(V.Local.bExcel)
+				F.Intrinsic.String.Build("{0}\GAB_5376_PastDue_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGCDue.Export(V.Local.sFileExport,"xlsx")
+					F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}\GAB_5376_PastDue_Export.csv",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGCDue.Export(V.Local.sFileExport,"csv")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.Case(2)
+			F.Intrinsic.Control.If(V.Local.bExcel)
+				F.Intrinsic.String.Build("{0}\GAB_5376_Stage_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGCStaging.Export(V.Local.sFileExport,"xlsx")
+					F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}\GAB_5376_Stage_Export.csv",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGCStaging.Export(V.Local.sFileExport,"csv")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.Case(3)
+			F.Intrinsic.Control.If(V.Local.bExcel)
+				F.Intrinsic.String.Build("{0}\GAB_5376_Shipped_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGridControlShipped.Export(V.Local.sFileExport,"xlsx")
+					F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}\GAB_5376_Shipped_Export.csv",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.frmShip.GsGridControlShipped.Export(V.Local.sFileExport,"csv")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.UpdatePrintFlag.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	v.Local.sSQL.Declare
+	V.local.sOrder2.Declare
+	V.Local.iRows.Declare
+	V.Local.iCnt.Declare
+
+	f.Intrinsic.String.Build("Select * from ORDER_LINES where ORDER_NO ='{0}'",v.Args.Order,v.Local.sSQL)
+	F.ODBC.Connection!con.OpenLocalRecordsetRW("rstFlag",v.Local.sSQL)
+	F.Intrinsic.Control.DoUntil(v.ODBC.con!rstFlag.EOF)
+
+		F.Intrinsic.Control.If(v.ODBC.con!rstFlag.FieldVal!RECORD_TYPE,=,"L")
+			F.ODBC.con!rstFlag.Set!Pick_List_Printed("Y")
+			F.ODBC.con!rstFlag.Update
+		f.Intrinsic.Control.EndIf
+		F.ODBC.con!rstFlag.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rstFlag.Close
+
+	F.Intrinsic.String.Build("Select * from ORDER_HEADER where ORDER_NO ='{0}'",v.Args.Order,v.Local.sSQL)
+	F.ODBC.Connection!con.OpenLocalRecordsetRW("rstFlag",v.Local.sSQL)
+	F.Intrinsic.Control.If(v.ODBC.con!rstFlag.FieldVal!RECORD_NO,=,"A")
+		F.ODBC.con!rstFlag.Set!FLAG_PICKLIST("Y")
+		F.ODBC.con!rstFlag.Update
+	f.Intrinsic.Control.EndIf
+	F.ODBC.con!rstFlag.Close
+
+	Gui.frmShip.GsGCAllShip.GetRowCount("gvAllShip",V.Local.iRows)
+	F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+		Gui.frmShip.GsGCAllShip.GetCellValueByColumnName("gvAllShip","ORDER_NO",V.Local.iCnt,V.local.sOrder2)
+		F.Intrinsic.Control.If(V.local.sOrder2,=,V.Args.Order)
+			Gui.FrmShip.GsGCAllShip.SetCellValueByColumnName("gvAllShip","PickLs",V.Local.iCnt,"RePrint")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	Gui.frmShip.GsGCDue.GetRowCount("gvDueShip",V.Local.iRows)
+	F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.iRows,1)
+		Gui.frmShip.GsGCDue.GetCellValueByColumnName("gvDueShip","ORDER_NO",V.Local.iCnt,V.Local.sOrder2)
+		F.Intrinsic.Control.If(V.local.sOrder2,=,V.Args.Order)
+			Gui.frmShip.GsGCDue.SetCellValueByColumnName("gvDueShip","PickLs",V.Local.iCnt,"RePrint")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.UpdatePrintFlag.End
+
+Program.Sub.txtAutoRef_LostFocus.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.bNumeric.Declare
+	V.Local.iMin.Declare
+
+	F.Intrinsic.Control.If(V.Screen.frmShip!txtAutoRef.Text,<>,"")
+		F.Intrinsic.Math.IsNumeric(V.Screen.frmShip!txtAutoRef.Text,V.Local.bNumeric)
+		F.Intrinsic.Control.If(V.Local.bNumeric,=,False)
+			Function.Intrinsic.UI.Msgbox("Value Must be Numeric")
+			Gui.frmShip.txtAutoRef.Text("")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Fix(V.Screen.frmShip!txtAutoRef.Text,V.Local.iMin)
+			F.Intrinsic.Control.If(V.Local.iMin,>,30)
+				Function.Intrinsic.UI.Msgbox("Max refresh is 30 minutes.","Max")
+				Gui.frmShip.txtAutoRef.Text(30)
+			F.Intrinsic.Control.Else
+				Gui.frmShip.txtAutoRef.Text(V.Local.iMin)
+			F.Intrinsic.Control.EndIf
+			Gui.frmShip.timerAutoRefresh.Enabled(False)
+			Gui.frmShip.timerAutoRefresh.Interval(60000)
+			Gui.frmShip.timerAutoRefresh.Enabled(True)
+			V.Global.bRefresh.Set(True)
+			F.Intrinsic.Control.CallSub(timerautorefresh_timer)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.txtAutoRef_LostFocus.End
+
+Program.Sub.chkAutoRef_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.frmShip!chkAutoRef.Value,=,0)
+		Gui.frmShip.txtAutoRef.Enabled(False)
+		Gui.frmShip.txtAutoRef.Locked(True)
+		Gui.frmShip.txtAutoRef.BackColor(-2147483633)
+		Gui.frmShip.timerAutoRefresh.Enabled(False)
+		Gui.frmShip.lbl1.Visible(False)
+	F.Intrinsic.Control.Else
+		Gui.frmShip.txtAutoRef.Enabled(True)
+		Gui.frmShip.txtAutoRef.Locked(False)
+		Gui.frmShip.txtAutoRef.BackColor(-2147483643)
+		F.Intrinsic.Control.CallSub(txtAutoRef_LostFocus)
+		Gui.frmShip.txtAutoRef.SetFocus
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.chkAutoRef_Click.End
+
+Program.Sub.timerAutoRefresh_Timer.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sCaption.Declare
+
+	F.Intrinsic.Control.If(V.Global.bRefresh)
+		V.Global.bRefresh.Set(False)
+		V.Global.iCnt.Set(V.Screen.frmShip!txtAutoRef.Text)
+		F.Intrinsic.String.Build("Auto refresh data in {0} minute(s).",V.Global.iCnt,V.Local.sCaption)
+		Gui.frmShip.lbl1.ForeColor(V.Color.Black)
+		Gui.frmShip.lbl1.Caption(V.Local.sCaption)
+		Gui.frmShip.lbl1.Visible(True)
+		F.Intrinsic.Control.If(V.Global.iCnt,=,1)
+			Gui.frmShip.timerAutoRefresh.Enabled(False)
+			Gui.frmShip.timerAutoRefresh.Interval(1000)
+			Gui.frmShip.timerAutoRefresh.Enabled(True)
+			V.Global.bSecs.Set(True)
+			V.Global.iSecs.Set(59)
+			F.Intrinsic.String.Build("Auto refresh data in {0} second(s).",V.Global.iSecs,V.Local.sCaption)
+			Gui.frmShip.lbl1.ForeColor(V.Color.LtRed)
+			Gui.frmShip.lbl1.Caption(V.Local.sCaption)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Global.bSecs)
+			F.Intrinsic.Math.Sub(V.Global.iSecs,1,V.Global.iSecs)
+			F.Intrinsic.Control.If(V.Global.iSecs,=,0)
+				Gui.frmShip.lbl1.SetFocus
+				F.Intrinsic.Control.CallSub(cmdrefresh_click)
+				Gui.frmShip.timerAutoRefresh.Enabled(False)
+				Gui.frmShip.timerAutoRefresh.Interval(60000)
+				Gui.frmShip.timerAutoRefresh.Enabled(True)
+				V.Global.bRefresh.Set(True)
+				V.Global.bSecs.Set(False)
+				F.Intrinsic.Control.CallSub(timerautorefresh_timer)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("Auto refresh data in {0} second(s).",V.Global.iSecs,V.Local.sCaption)
+				Gui.frmShip.lbl1.ForeColor(V.Color.LtRed)
+				Gui.frmShip.lbl1.Caption(V.Local.sCaption)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Sub(V.Global.iCnt,1,V.Global.iCnt)
+			F.Intrinsic.Control.If(V.Global.iCnt,=,1)
+				Gui.frmShip.timerAutoRefresh.Enabled(False)
+				Gui.frmShip.timerAutoRefresh.Interval(1000)
+				Gui.frmShip.timerAutoRefresh.Enabled(True)
+				V.Global.bSecs.Set(True)
+				V.Global.iSecs.Set(59)
+				F.Intrinsic.String.Build("Auto refresh data in {0} second(s).",V.Global.iSecs,V.Local.sCaption)
+				Gui.frmShip.lbl1.ForeColor(V.Color.LtRed)
+				Gui.frmShip.lbl1.Caption(V.Local.sCaption)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("Auto refresh data in {0} minute(s).",V.Global.iCnt,V.Local.sCaption)
+				Gui.frmShip.lbl1.ForeColor(V.Color.Black)
+				Gui.frmShip.lbl1.Caption(V.Local.sCaption)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.timerAutoRefresh_Timer.End
+
+Program.Sub.picGSSLogo_DblClick.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmWeb..Show
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.picGSSLogo_DblClick.End
+
+Program.Sub.frmWeb_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmWeb..Visible(False)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmWeb_UnLoad.End
+
+Program.Sub.cmdGSS_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://www.globalshopsolutions.com/","","",0)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdGSS_Click.End
+
+Program.Sub.cmdServ_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-service.com/","","",0)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdServ_Click.End
+
+Program.Sub.cmdUpd_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-updates.com/","","",0)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpd_Click.End
+
+Program.Sub.cmdResetGsGC_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 5376 And Seq = 1000;")
+	F.ODBC.Connection!common.Close
+	
+	Gui.frmWeb..Visible(False)
+	V.Global.bLoadData.Set(False)
+	F.Intrinsic.Control.CallSub(cmdReFresh_Click)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdResetGsGC_Click.End
+
+Program.Sub.Serialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSerialize.Declare
+	
+	'GvAllShip
+	Gui.frmShip.GsGCAllShip.Serialize("gvAllShip",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVALLSHIP",5376,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	'GvDueShip
+	Gui.frmShip.GsGCDue.Serialize("gvDueShip",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVDUESHIP",5376,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	'GvStaging
+	Gui.frmShip.GsGCStaging.Serialize("gvStaging",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVSTAGING",5376,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	'GvShipped
+	Gui.frmShip.GsGridControlShipped.Serialize("gvShipped",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVSHIPPED",5376,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSerialize.Declare
+	
+	'Delete old registry records
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVALLSHIP",5376,0,5,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+		F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 5376 And Seq < 1000;")
+		F.ODBC.Connection!common.Close
+	F.Intrinsic.Control.EndIf
+
+	'GvAllShip
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVALLSHIP",5376,1000,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		Gui.frmShip.GsGCAllShip.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	'GvDueShip
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVDUESHIP",5376,1000,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		Gui.frmShip.GsGCDue.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	'GvStaging
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVSTAGING",5376,1000,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		Gui.frmShip.GsGCStaging.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	'GvShipped
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVSHIPPED",5376,1000,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		Gui.frmShip.GsGridControlShipped.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.SetContextMenus.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmNotes..ContextMenuCreate("ctxNotes")
+	Gui.frmNotes.GsGCNotes.ContextMenuAttach("ctxNotes")
+	Gui.frmNotes..ContextMenuAddItem("ctxNotes","AddNote",0,"Add Note")
+	Gui.frmNotes..ContextMenuSetItemEventHandler("ctxNotes","AddNote","MenuClickAdd")
+	Gui.frmNotes..ContextMenuAddItem("ctxNotes","DelNote",0,"Delete Note")
+	Gui.frmNotes..ContextMenuSetItemEventHandler("ctxNotes","DelNote","MenuClickDelete")
+	Gui.frmNotes..ContextMenuAddItem("ctxNotes","Refresh",0,"Refresh")
+	Gui.frmNotes..ContextMenuSetItemEventHandler("ctxNotes","Refresh","MenuClickRefresh")
+	Gui.frmNotes..ContextMenuAddItem("ctxNotes","Export",0,"Export")
+	Gui.frmNotes..ContextMenuSetItemEventHandler("ctxNotes","Export","MenuClickExport")
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickAdd.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iNID.Declare
+	
+	F.ODBC.Connection!con.ExecuteAndReturn("Select Max(NID) From GAB_4595_NOTES;",V.Local.iNID)
+	F.Intrinsic.Math.Add(V.Local.iNID,1,V.Local.iNID)
+	F.Data.DataTable.AddRow("dtNotes","NID",V.Local.iNID,"ORDER_NO",V.Global.sOrderNo,"ORDER_LINE",V.Global.sOrderLn,"GSUSER",V.Caller.User,"CREATE_DT",V.Ambient.Date,"CREATE_TIME",V.Ambient.Time.FormatHh:Nn:Ss)
+	F.Data.DataTable.RemoveColumn("dtNotes","Email")
+	F.Data.DataTable.RemoveColumn("dtNotes","Text")
+	F.Data.DataTable.SaveToDB("dtNotes","con","GAB_4595_NOTES","NID")
+	F.Intrinsic.Control.CallSub(LoadDtNotes)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickAdd.End
+
+Program.Sub.MenuClickDelete.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iRow.Declare
+	V.Local.sSQL.Declare
+	
+	Gui.frmNotes.GsGCNotes.GetSelectedRows("gvNotes",V.Local.iRow)
+	F.Intrinsic.String.Build("Delete From Gab_4595_Notes Where NID = {0};",V.DataTable.dtNotes(V.Local.iRow).NID!FieldVal,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Data.DataTable.DeleteRow("dtNotes",V.Local.iRow)
+	F.Intrinsic.Control.CallSub(LoadDtNotes)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4571_Security_Setup.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickDelete.End
+
+Program.Sub.MenuClickRefresh.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.CallSub(LoadDtNotes)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickRefresh.End
+
+Program.Sub.MenuClickExport.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+	V.Local.iRet.Declare
+
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\GAB_5376_Ship_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.frmNotes.GsGCNotes.Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\GAB_5376_Ship_Export.csv",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.frmNotes.GsGCNotes.Export(V.Local.sFileExport,"csv")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExport.End
+
+Program.Sub.LoadDtNotes.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSQL.Declare
+
+	F.Intrinsic.Control.If(V.DataTable.dtNotes.Exists)
+		F.Data.DataTable.Close("dtNotes")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Select * From GAB_4595_NOTES Where Order_No = '{0}' And Order_Line = '{1}' Order By Create_Dt Desc, Create_Time Desc;",V.Global.sOrderNo,V.Global.sOrderLn,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtNotes","con",V.Local.sSQL,True)
+	F.Data.DataTable.AddColumn("dtNotes","Email",String,"Email")
+	F.Data.DataTable.AddColumn("dtNotes","Text",String,"Text Msg")
+	F.Intrinsic.Control.CallSub(LoadGvNotes)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.LoadDtNotes.End
+
+Program.Sub.LoadGvNotes.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmNotes.GsGCNotes.AddGridViewFromDataTable("gvNotes","dtNotes")
+	Gui.frmNotes.GsGCNotes.MainView("gvNotes")
+	Gui.frmNotes.GsGCNotes.SuspendLayout()
+	Gui.frmNotes.GsGCNotes.SetGridViewProperty("gvNotes","MultiSelect",True)
+	Gui.frmNotes.GsGCNotes.SetGridViewProperty("gvNotes","OptionBehaviorEditable",True)
+	Gui.frmNotes.GsGCNotes.SetGridViewProperty("gvNotes","AllowSort",True)
+	Gui.frmNotes.GsGCNotes.SetGridViewProperty("gvNotes","AllowFilter",True)
+	Gui.frmNotes.GsGCNotes.SetGridViewProperty("gvNotes","OptionsDetailShowDetailTabs",False)
+	Gui.frmNotes.GsGCNotes.SetGridViewProperty("gvNotes","OptionsViewShowGroupPanel",True)
+	Gui.frmNotes.GsGCNotes.SetGridViewProperty("gvNotes","EnableAppearanceOddRow",True)
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","NID","Visible",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_NO","Visible",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_LINE","Visible",False)
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","ShowCaption",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","ShowCaption",False)
+
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_NO","Caption","Order")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_LINE","Caption","Line")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","GSUSER","Caption","User")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_DT","Caption","Create Date")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_TIME","Caption","Create Time")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","NOTES","Caption","Notes")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","Caption","Email")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","Caption","Text Msg")
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_NO","AllowEdit",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_LINE","AllowEdit",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","GSUSER","AllowEdit",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_DT","AllowEdit",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_TIME","AllowEdit",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","NOTES","AllowEdit",True)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","AllowEdit",False)
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","AllowEdit",False)
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","NOTES","ReadOnly",False)
+
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_NO","MinWidth","50")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_LINE","MinWidth","50")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","GSUSER","MinWidth","50")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_DT","MinWidth","50")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_TIME","MinWidth","50")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","NOTES","MinWidth","350")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","MinWidth","20")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","MinWidth","20")
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_NO","HeaderHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_LINE","HeaderHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","GSUSER","HeaderHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_DT","HeaderHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_TIME","HeaderHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","NOTES","HeaderHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","HeaderHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","HeaderHAlignment","Center")
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_NO","CellHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","ORDER_LINE","CellHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","GSUSER","CellHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_DT","CellHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_TIME","CellHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","CellHAlignment","Center")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","CellHAlignment","Center")
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","NOTES","CellBackColor","LightYellow")
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","CellBackColor","Gray")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","CellBackColor","Gray")
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Email","CellForeColor","White")
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","Text","CellForeColor","White")
+	
+	Gui.frmNotes.GsGCNotes.SetColumnProperty("gvNotes","CREATE_DT","DisplayCustomDatetime","d")
+	Gui.frmNotes.GsGCNotes.ResumeLayout()
+
+	Gui.frmNotes..Visible(True)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.LoadGvNotes.End
+
+Program.Sub.frmNotes_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmNotes..Visible(False)
+	Gui.frmEmail..Visible(False)
+	Gui.frmText..Visible(False)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmNotes_UnLoad.End
+
+Program.Sub.GsGCNotes_RowCellClick.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sOrder.Declare
+	V.Local.sLine.Declare
+	V.Local.sUser.Declare
+	V.Local.dCreateDt.Declare
+	V.Local.sCreateTime.Declare
+	V.Local.sNotes.Declare
+	V.Local.sSubject.Declare
+	V.Local.sBody.Declare
+	
+	Gui.frmNotes.GsGCNotes.GetCellValueByColumnName("gvNotes","ORDER_NO",V.Args.RowIndex,V.Local.sOrder)
+	Gui.frmNotes.GsGCNotes.GetCellValueByColumnName("gvNotes","ORDER_LINE",V.Args.RowIndex,V.Local.sLine)
+	Gui.frmNotes.GsGCNotes.GetCellValueByColumnName("gvNotes","GSUSER",V.Args.RowIndex,V.Local.sUser)
+	Gui.frmNotes.GsGCNotes.GetCellValueByColumnName("gvNotes","CREATE_DT",V.Args.RowIndex,V.Local.dCreateDt)
+	Gui.frmNotes.GsGCNotes.GetCellValueByColumnName("gvNotes","CREATE_TIME",V.Args.RowIndex,V.Local.sCreateTime)
+	Gui.frmNotes.GsGCNotes.GetCellValueByColumnName("gvNotes","NOTES",V.Args.RowIndex,V.Local.sNotes)
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		F.Intrinsic.Control.Case("Email")
+			F.Intrinsic.String.Build("Notes for Sales Order ({0}-{1})",V.Local.sOrder,V.Local.sLine,V.Local.sSubject)
+			F.Intrinsic.String.Build("Hello,{0}{1} entered in,{2}{3}{2}, on {4} at {5}.{0}{0}Customer: {6}{0}Salesperson: {7}{0}Part Number: {8}{0}Part Description: {9}{0}Quantity: {10}{0}Customer PO: {11}{0}Ship Date: {12}",V.Ambient.NewLine,V.Local.sUser,V.Ambient.DblQuote,V.Local.sNotes,V.Local.dCreateDt,V.Local.sCreateTime,V.Global.sCustomer.Trim,V.Global.sSalesperson.Trim,V.Global.sPart.Trim,V.Global.sPaerDesc.Trim,V.Global.fQty,V.Global.sCustPO,V.Global.dDueDate,V.Local.sBody)
+			Gui.frmEmail.txtRcpts.Text("")
+			Gui.frmEmail.txtSubject.Text(V.Local.sSubject)
+			Gui.frmEmail.txtBody.Text(V.Local.sBody)
+			Gui.frmText..Visible(False)
+			Gui.frmEmail..Show
+		F.Intrinsic.Control.Case("Text")
+			F.Intrinsic.String.Build("Notes for Sales Order ({0}-{1})",V.Local.sOrder,V.Local.sLine,V.Local.sSubject)
+			F.Intrinsic.String.Build("Hello,{0}{1} entered in,{2}{3}{2}, on {4} at {5}.{0}{0}Customer: {6}{0}Salesperson: {7}{0}Part Number: {8}{0}Part Description: {9}{0}Quantity: {10}{0}Customer PO: {11}{0}Ship Date: {12}",V.Ambient.NewLine,V.Local.sUser,V.Ambient.DblQuote,V.Local.sNotes,V.Local.dCreateDt,V.Local.sCreateTime,V.Global.sCustomer.Trim,V.Global.sSalesperson.Trim,V.Global.sPart.Trim,V.Global.sPaerDesc.Trim,V.Global.fQty,V.Global.sCustPO,V.Global.dDueDate,V.Local.sBody)
+			Gui.frmText.txtRcpts.Text("")
+			Gui.frmText.txtSubject.Text(V.Local.sSubject)
+			Gui.frmText.txtBody.Text(V.Local.sBody)
+			Gui.frmEmail..Visible(False)
+			Gui.frmText..Show
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCNotes_RowCellClick.End
+
+Program.Sub.GsGCNotes_CellValueChanged.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sText.Declare
+	V.Local.sSQL.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		F.Intrinsic.Control.Case("NOTES")
+			'F.Data.DataTable.RemoveColumn("dtNotes","Email")
+			'F.Data.DataTable.RemoveColumn("dtNotes","Text")
+			'F.Data.DataTable.SetValue("dtNotes",V.Args.RowIndex,"NOTES",V.Args.Value)
+			'F.Data.DataTable.SaveToDB("dtNotes","con","GAB_4595_NOTES","NID")
+			'F.Intrinsic.Control.CallSub(LoadDtNotes)
+			F.Intrinsic.String.Replace(V.Args.Value,"'","''",V.Local.sText)
+			F.Intrinsic.String.Build("Update Gab_4595_Notes Set Notes = '{0}' Where NID = {1};",V.Local.sText,V.DataTable.dtNotes(V.Args.RowIndex).NID!FieldVal,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCNotes_CellValueChanged.End
+
+Program.Sub.cmdSend_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	V.Local.sEmails.Declare
+	V.Local.iUserID.Declare
+	V.Local.sSender.Declare
+	V.Local.sRcpts.Declare
+	
+	F.Global.Security.GetUserId(V.Caller.User,V.Caller.CompanyCode,V.Local.iUserID)
+	F.Intrinsic.String.Build("{0}*!*{0}",V.Global.sUserEmail,V.Local.sSender)
+	
+	F.Intrinsic.Control.If(V.Global.sUserEmail,<>,"")
+		F.Intrinsic.UI.Msgbox("Do you want to continue and send an email to all the entered recipients?","Email",4,V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,=,6)
+
+			F.Intrinsic.Control.CallSub(CheckCourier)
+			F.Intrinsic.String.Split(V.Screen.frmEmail!txtRcpts.Text,",",V.Local.sEmails)
+			F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sEmails.UBound,1)
+				F.Intrinsic.Control.If(V.Local.iCnt,=,0)
+					F.Intrinsic.String.Build("{0}*!*{0}",V.Local.sEmails(V.Local.iCnt),V.Local.sRcpts)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Build("{0}@!@{1}*!*{1}",V.Local.sRcpts,V.Local.sEmails(V.Local.iCnt),V.Local.sRcpts)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.iCnt)
+			F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iUserID,"",V.Screen.frmEmail!txtSubject.Text,V.Local.sSender,V.Local.sRcpts,V.Screen.frmEmail!txtBody.Text)
+			Gui.frmEmail..Visible(False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("No Email set up for user.","No Email Setup")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdSend_Click.End
+
+Program.Sub.frmEmail_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmEmail..Visible(False)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmEmail_UnLoad.End
+
+Program.Sub.cmdSendText_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iRet.Declare
+	V.Local.iCarrier.Declare
+	V.Local.sNumbers.Declare
+	V.Local.sNumbersSend.Declare
+	V.Local.iLen.Declare
+	V.Local.iCnt.Declare
+	
+	F.Intrinsic.Control.If(V.Global.sUserEmail,<>,"")
+		F.Intrinsic.UI.Msgbox("Do you want to continue and send a text message to all the entered recipients?","Text Message",4,V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,=,6)
+			F.Intrinsic.Control.CallSub(CheckCourier)
+			F.Intrinsic.Control.SelectCase(V.Screen.frmText!ddl1.Text)
+				F.Intrinsic.Control.Case("ATT")
+					V.Local.iCarrier.Set(0)
+				F.Intrinsic.Control.Case("T-Mobile")
+					V.Local.iCarrier.Set(1)
+				F.Intrinsic.Control.Case("Sprint")
+					V.Local.iCarrier.Set(3)
+				F.Intrinsic.Control.Case("Verizon")
+					V.Local.iCarrier.Set(4)
+				F.Intrinsic.Control.CaseElse
+					V.Local.iCarrier.Set(-1)
+			F.Intrinsic.Control.EndSelect
+			F.Intrinsic.Control.If(V.Local.iCarrier,<>,-1)
+				F.Intrinsic.String.Split(V.Screen.frmText!txtRcpts.Text,",",V.Local.sNumbers)
+				F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sNumbers.UBound,1)
+					F.Intrinsic.String.Replace(V.Local.sNumbers(V.Local.iCnt),"-","",V.Local.sNumbersSend)
+					F.Intrinsic.String.Len(V.Local.sNumbersSend,V.Local.iLen)
+					F.Intrinsic.Control.If(V.Local.iLen,=,10)
+						F.Global.Messaging.CreateSMSmessage(V.Local.iCarrier,V.Local.sNumbersSend,V.Global.sUserEmail,V.Screen.frmText!txtSubject.Text,V.Screen.frmText!txtBody.Text)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+				Gui.frmText..Visible(False)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.UI.Msgbox("Select a carrier.","Carrier Missing")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("No Email set up for user.","No Email Setup")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdSendText_Click.End
+
+Program.Sub.frmText_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmText..Visible(False)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmText_UnLoad.End
+
+Program.Sub.SetCarriers.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.iCnt.Declare
+	V.Local.sCarriers.Declare
+	
+	V.Local.sCarriers.Set("ATT*!*T-Mobile*!*Sprint*!*Verizon")
+	F.Intrinsic.String.Split(V.Local.sCarriers,"*!*",V.Local.sCarriers)
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sCarriers.UBound,1)
+		Gui.frmText.ddl1.AddItem(V.Local.sCarriers(V.Local.iCnt),V.Local.iCnt)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetCarriers.End
+
+Program.Sub.CheckCourier.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.bCourier.Declare
+	
+	F.Global.Messaging.IsCourierRunning(V.Local.bCourier)
+	F.Intrinsic.Control.If(V.Local.bCourier,=,False)
+		F.Intrinsic.UI.Msgbox("Messages will not be sent until Courier is on","Courier is Not Running")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.CheckCourier.End
+Program.Sub.GsGridControlShipped_RowCellClick.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.pSHP.Declare(String)
+V.Local.lSHP.Declare(String)
+V.Local.call.Declare(String)
+V.Local.sTemp.Declare(String)
+V.Local.sTempLine.Declare
+V.Local.bStaged.Declare
+V.Local.sCaption.Declare
+
+			
+F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	F.Intrinsic.Control.Case("PART")
+		F.Intrinsic.Control.If(V.Screen.frmShip!optView.Value,=,True)
+			F.Intrinsic.Control.CallSub(disablecontrols)
+			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","PART",V.Args.RowIndex,V.Local.pSHP)
+			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+			F.Intrinsic.String.Concat(V.Local.pSHP,"!*!",V.Local.lSHP,"!*!","W",V.Local.call)
+			F.Global.General.CallWrappersync(300011,v.Local.call)
+			F.Intrinsic.Control.CallSub(enablecontrols)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(disablecontrols)
+			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","PART",V.Args.RowIndex,V.Local.pSHP)
+			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+			F.Intrinsic.String.Concat(V.Local.pSHP,"!*!",V.Local.lSHP,"!*!","W",V.Local.call)
+			F.Global.General.CallWrappersync(300011,v.Local.call)
+			F.Intrinsic.Control.CallSub(enablecontrols)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("QTY_ONHAND")
+		
+			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","PART",V.Args.RowIndex,V.Local.pSHP)
+			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","LOCATION",V.Args.RowIndex,V.Local.lSHP)
+'			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","DESCRIPTION",V.Args.RowIndex,V.Local.call)
+			Gui.frmShip.GsGridControlShipped.GetCellValueByColumnName("gvShipped","QTY_ONHAND",V.Args.RowIndex,V.Local.sTemp)
+			F.Intrinsic.Control.CallSub("subGridLoad_fgItem","Part",V.Local.pSHP,"Loc",V.Local.lSHP,"Desc",V.Local.call,"OnHand",V.Local.sTemp)
+			F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlShipped_RowCellClick.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$bpham$}$20220131094720512$}$Di0riF4Q5RIv6jxva5zSWBaTvp+T0Dt6DVHhOf8Y0+17sagCseUtE9ZIgctiqFablQOi5efgif4=
+Program.Sub.Comments.End
